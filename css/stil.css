@@ -1,0 +1,643 @@
+/* ==========================================================
+   Die Würfelrunde – Stylesheet
+   selbstgebaut, keine Frameworks, keine runden Ecken :)
+   ========================================================== */
+
+* { box-sizing: border-box; }
+
+html {
+  background: #2e2a26;
+}
+
+body {
+  margin: 0;
+  padding: 18px 10px 70px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+  color: #1d1a17;
+}
+
+.seite {
+  max-width: 980px;
+  margin: 0 auto;
+  background: #fbf7ee;
+  border: 3px solid #000;
+}
+
+/* ---------- Kopf ---------- */
+.kopf {
+  background: #8a1c1c;
+  color: #fff;
+  padding: 12px 18px 10px;
+  border-bottom: 3px solid #000;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.kopf a { color: inherit; text-decoration: none; }
+.kopf svg { flex: 0 0 auto; }
+.kopf .titel {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 0 #000;
+}
+.kopf .untertitel {
+  font-style: italic;
+  font-size: 13px;
+  color: #f3d9a4;
+}
+
+/* ---------- Menü ---------- */
+.menue {
+  background: #d9cfb8;
+  border-bottom: 2px solid #000;
+  display: flex;
+  flex-wrap: wrap;
+}
+.menue a {
+  padding: 8px 13px;
+  color: #000;
+  text-decoration: none;
+  border-right: 1px solid #000;
+  font-weight: bold;
+  font-size: 14px;
+}
+.menue a:hover { background: #f1e6c9; text-decoration: underline; }
+.menue a.aktiv {
+  background: #fbf7ee;
+  color: #8a1c1c;
+  text-decoration: underline;
+}
+
+/* ---------- Inhalt ---------- */
+main { padding: 16px 22px 30px; }
+
+h1, h2, h3, h4 { font-family: Georgia, "Times New Roman", serif; }
+h1 { font-size: 28px; margin: 6px 0 10px; }
+h2 {
+  font-size: 23px;
+  color: #8a1c1c;
+  border-bottom: 2px solid #8a1c1c;
+  padding-bottom: 2px;
+  margin: 28px 0 12px;
+}
+h3 { font-size: 19px; margin: 22px 0 8px; }
+h4 { font-size: 16px; margin: 16px 0 6px; }
+
+a { color: #1a3e8a; }
+a:visited { color: #5a2a7a; }
+a:hover { color: #8a1c1c; }
+
+p { margin: 8px 0 10px; }
+ul, ol { padding-left: 24px; }
+li { margin: 3px 0; }
+
+hr {
+  border: 0;
+  border-top: 2px dashed #9b8e74;
+  margin: 24px 0;
+}
+
+.klein { font-size: 12px; color: #5a5247; }
+.mitte { text-align: center; }
+.rot { color: #8a1c1c; }
+.versteckt { display: none !important; }
+
+/* ---------- Kästen ---------- */
+.tipp {
+  border-left: 6px solid #8a1c1c;
+  background: #f1e6c9;
+  padding: 8px 12px;
+  margin: 14px 0;
+}
+.tipp > b:first-child,
+.achtung > b:first-child { text-transform: uppercase; font-size: 13px; letter-spacing: 1px; }
+
+.achtung {
+  border: 2px solid #8a1c1c;
+  background: #fff;
+  padding: 8px 12px;
+  margin: 14px 0;
+}
+
+.vorlesen {
+  background: #e9e1cd;
+  border: 1px dashed #6b5a3a;
+  padding: 10px 14px;
+  margin: 12px 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: 16px;
+}
+.vorlesen::before {
+  content: "Vorlesen:";
+  display: block;
+  font-family: Verdana, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #6b5a3a;
+  margin-bottom: 4px;
+}
+
+.sl-info {
+  background: #fff;
+  border: 2px solid #3a332c;
+  padding: 8px 12px;
+  margin: 12px 0;
+}
+.sl-info::before {
+  content: "Nur für den Spielleiter";
+  display: inline-block;
+  background: #3a332c;
+  color: #fff;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 1px 6px;
+  margin-bottom: 6px;
+}
+
+fieldset {
+  border: 2px solid #000;
+  padding: 10px 14px 14px;
+  margin: 16px 0;
+  background: #fff;
+  min-width: 0;
+}
+legend {
+  background: #000;
+  color: #fff;
+  padding: 2px 8px;
+  font-weight: bold;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ---------- Tabellen ---------- */
+.tabelle-wrap { overflow-x: auto; }
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 10px 0 14px;
+  background: #fff;
+}
+th, td {
+  border: 1px solid #555;
+  padding: 5px 8px;
+  text-align: left;
+  vertical-align: top;
+}
+th { background: #3a332c; color: #fff; }
+tr:nth-child(even) td { background: #f6f1e4; }
+
+/* ---------- Formulare & Knöpfe ---------- */
+button, .knopf {
+  font: inherit;
+  font-size: 14px;
+  font-weight: bold;
+  background: #efe3c2;
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 0;
+  padding: 6px 12px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  line-height: 1.3;
+}
+button:hover, .knopf:hover { background: #e2cf9a; color: #000; }
+button:active, .knopf:active { position: relative; top: 1px; left: 1px; }
+button:disabled { opacity: .45; cursor: not-allowed; }
+button.dunkel, .knopf.dunkel { background: #8a1c1c; color: #fff; }
+button.dunkel:hover, .knopf.dunkel:hover { background: #a52828; color: #fff; }
+button.klein-k { font-size: 12px; padding: 2px 7px; border-width: 1px; }
+
+input[type=text], input[type=number], input[type=search], select, textarea {
+  font: inherit;
+  font-size: 15px;
+  border: 1px solid #333;
+  border-radius: 0;
+  padding: 4px 6px;
+  background: #fff;
+  color: #000;
+  -webkit-appearance: none;
+  appearance: none;
+}
+select {
+  padding-right: 24px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0h10L5 6z' fill='%23000'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 7px center;
+}
+input:focus, select:focus, textarea:focus, button:focus-visible {
+  outline: 2px solid #8a1c1c;
+  outline-offset: 1px;
+}
+textarea { width: 100%; min-height: 70px; resize: vertical; }
+label { cursor: pointer; }
+
+.zeile { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 8px 0; }
+
+/* ---------- Startseite ---------- */
+.wege {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 12px;
+  margin: 14px 0;
+}
+.weg {
+  border: 2px solid #000;
+  background: #fff;
+  padding: 10px 12px;
+  color: #000;
+  text-decoration: none;
+  display: block;
+}
+.weg:visited { color: #000; }
+.weg:hover { background: #f1e6c9; color: #000; }
+.weg b { font-family: Georgia, serif; font-size: 18px; display: block; color: #8a1c1c; }
+.weg span { font-size: 13px; }
+
+/* ---------- Würfel-Ergebnisse ---------- */
+.wurf-inline {
+  font: inherit;
+  font-weight: bold;
+  background: #fff;
+  border: 1px solid #8a1c1c;
+  color: #8a1c1c;
+  padding: 0 4px;
+  cursor: pointer;
+  font-size: inherit;
+  white-space: nowrap;
+}
+.wurf-inline:hover { background: #8a1c1c; color: #fff; }
+.wurf-erg {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  background: #000;
+  color: #ffde85;
+  padding: 0 5px;
+  margin-left: 3px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.grossergebnis {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 64px;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+  padding: 14px 0 6px;
+}
+.grossergebnis.krit { color: #0b6b1f; }
+.grossergebnis.patzer { color: #8a1c1c; }
+.erg-text { text-align: center; font-family: "Courier New", monospace; font-size: 15px; min-height: 1.5em; }
+.erg-hinweis { text-align: center; font-weight: bold; min-height: 1.5em; }
+
+.wuerfelreihe { display: flex; flex-wrap: wrap; gap: 8px; }
+.wuerfelknopf {
+  width: 78px;
+  padding: 6px 2px 4px;
+  background: #fff;
+  text-align: center;
+}
+.wuerfelknopf svg { display: block; margin: 0 auto 2px; }
+.wuerfelknopf:hover { background: #f1e6c9; }
+
+.verlauf {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 260px;
+  overflow-y: auto;
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  border: 1px solid #999;
+  background: #fff;
+}
+.verlauf li { margin: 0; padding: 3px 8px; border-bottom: 1px dotted #bbb; }
+.verlauf li:nth-child(odd) { background: #f6f1e4; }
+.verlauf .zeit { color: #777; }
+
+/* ---------- Anleitung ---------- */
+.anleitung-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 20px;
+}
+.inhalt-liste {
+  border: 2px solid #000;
+  background: #fff;
+  padding: 8px 0;
+  align-self: start;
+  position: sticky;
+  top: 10px;
+}
+.inhalt-liste h4 { margin: 0 10px 6px; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
+.inhalt-liste ol { margin: 0; padding: 0; list-style: none; counter-reset: lek; }
+.inhalt-liste li { margin: 0; counter-increment: lek; }
+.inhalt-liste a {
+  display: block;
+  padding: 4px 10px;
+  color: #000;
+  text-decoration: none;
+  font-size: 13px;
+  border-top: 1px dotted #bbb;
+}
+.inhalt-liste a::before { content: counter(lek) ". "; font-weight: bold; }
+.inhalt-liste a:hover { background: #f1e6c9; }
+.inhalt-liste a.jetzt { background: #8a1c1c; color: #fff; }
+.inhalt-liste a.gelesen::after { content: " \2713"; color: #0b6b1f; font-weight: bold; }
+.inhalt-liste a.jetzt.gelesen::after { color: #b6f0b6; }
+
+.fortschritt {
+  display: flex;
+  border: 2px solid #000;
+  height: 14px;
+  margin: 4px 0 14px;
+  background: #fff;
+}
+.fortschritt span { flex: 1; border-right: 1px solid #000; }
+.fortschritt span:last-child { border-right: 0; }
+.fortschritt span.voll { background: #0b6b1f; }
+.fortschritt span.jetzt { background: #8a1c1c; }
+
+.lektion { display: none; }
+.lektion.sichtbar { display: block; }
+.lektion h2 { margin-top: 0; }
+.lektion-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  border-top: 2px dashed #9b8e74;
+  margin-top: 26px;
+  padding-top: 12px;
+}
+
+.frage { border: 2px solid #000; background: #fff; padding: 10px 12px; margin: 14px 0; }
+.frage .f { font-weight: bold; margin: 0 0 8px; }
+.frage .antworten { display: flex; flex-wrap: wrap; gap: 6px; }
+.frage button.richtig { background: #0b6b1f; color: #fff; }
+.frage button.falsch { background: #8a1c1c; color: #fff; text-decoration: line-through; }
+.frage .erkl { margin: 8px 0 0; display: none; }
+.frage.beantwortet .erkl { display: block; }
+
+.log {
+  border: 1px solid #333;
+  background: #1d1a17;
+  color: #e9e1cd;
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  padding: 8px 10px;
+  max-height: 260px;
+  overflow-y: auto;
+  margin: 10px 0;
+}
+.log p { margin: 2px 0; }
+.log .gut { color: #8fe08f; }
+.log .schlecht { color: #ff9b8a; }
+.log .info { color: #ffde85; }
+
+.balken { border: 1px solid #000; height: 12px; background: #fff; width: 150px; display: inline-block; vertical-align: middle; }
+.balken i { display: block; height: 100%; background: #0b6b1f; }
+.balken.gegner i { background: #8a1c1c; }
+
+.kampf-felder { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.kampf-box { border: 2px solid #000; padding: 8px 10px; background: #fbf7ee; }
+.kampf-box h4 { margin: 0 0 4px; }
+
+/* ---------- Charakterbogen ---------- */
+.bogen-kopf { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 8px 14px; }
+.feld label, .feld .lbl { display: block; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; color: #5a5247; }
+.feld input, .feld select { width: 100%; }
+
+.attribute { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; }
+.attr {
+  border: 2px solid #000;
+  background: #fff;
+  text-align: center;
+  padding: 6px 4px 8px;
+}
+.attr .name { font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+.attr input { width: 58px; text-align: center; font-size: 18px; font-weight: bold; margin: 4px 0; }
+.attr .mod {
+  font-family: "Courier New", monospace;
+  font-size: 22px;
+  font-weight: bold;
+  border: 1px solid #000;
+  display: inline-block;
+  min-width: 46px;
+  background: #f1e6c9;
+  cursor: pointer;
+}
+.attr .mod:hover { background: #8a1c1c; color: #fff; }
+
+.werte { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 12px 0; }
+.wert { border: 2px solid #000; background: #fff; text-align: center; padding: 4px; }
+.wert .zahl { font-family: "Courier New", monospace; font-size: 24px; font-weight: bold; }
+.wert input { width: 70px; text-align: center; font-size: 20px; font-weight: bold; }
+.wert .name { font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+
+.zwei-spalten { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.fert-liste { list-style: none; padding: 0; margin: 0; }
+.fert-liste li { display: flex; align-items: center; gap: 6px; padding: 2px 0; border-bottom: 1px dotted #bbb; margin: 0; }
+.fert-liste .bonus {
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+  width: 38px;
+  text-align: center;
+  border: 1px solid #000;
+  background: #f1e6c9;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0;
+}
+.fert-liste .bonus:hover { background: #8a1c1c; color: #fff; }
+.fert-liste .att { color: #777; font-size: 12px; }
+.fert-liste li.klasse-fert .fname { text-decoration: underline dotted #8a1c1c; }
+
+.wurfzeile {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: #000;
+  color: #ffde85;
+  font-family: "Courier New", monospace;
+  font-size: 16px;
+  padding: 6px 10px;
+  margin: 10px 0;
+  min-height: 2.1em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 14px;
+}
+.wurfzeile .wmodus { font-size: 14px; white-space: nowrap; }
+
+.klassen-info { background: #f1e6c9; border: 1px solid #000; padding: 8px 10px; font-size: 14px; margin: 10px 0; }
+
+.vorlagen { display: flex; flex-wrap: wrap; gap: 6px; }
+
+/* ---------- Spielleiter ---------- */
+.ini-liste { border: 2px solid #000; background: #fff; }
+.ini-eintrag {
+  display: grid;
+  grid-template-columns: 46px 1fr auto;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 8px;
+  border-bottom: 1px solid #999;
+}
+.ini-eintrag:last-child { border-bottom: 0; }
+.ini-eintrag .ini {
+  font-family: "Courier New", monospace;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid #000;
+  background: #f1e6c9;
+}
+.ini-eintrag.dran { background: #ffe9a8; outline: 3px solid #8a1c1c; outline-offset: -3px; }
+.ini-eintrag.monster .nm::before { content: "[M] "; color: #8a1c1c; font-weight: bold; }
+.ini-eintrag.ko { opacity: .5; }
+.ini-eintrag.ko .nm { text-decoration: line-through; }
+.ini-eintrag .nm { font-weight: bold; }
+.ini-eintrag .tp-zeile { font-size: 13px; }
+.ini-eintrag .tp-zeile input { width: 54px; padding: 1px 3px; font-size: 13px; }
+.ini-leer { padding: 14px; color: #777; text-align: center; }
+
+.monster-karten { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px; }
+.monster {
+  border: 2px solid #000;
+  background: #fff;
+  padding: 8px 10px;
+  font-size: 13px;
+}
+.monster h4 { margin: 0; font-size: 17px; color: #8a1c1c; border-bottom: 1px solid #8a1c1c; }
+.monster .art { font-style: italic; font-size: 12px; color: #5a5247; margin-bottom: 4px; }
+.monster p { margin: 4px 0; }
+
+.gen-ausgabe {
+  border: 1px dashed #000;
+  background: #fff;
+  padding: 8px 10px;
+  min-height: 2.4em;
+  margin: 8px 0;
+  font-family: Georgia, serif;
+  font-size: 16px;
+}
+
+/* ---------- Glossar ---------- */
+dl.glossar dt {
+  font-weight: bold;
+  font-family: Georgia, serif;
+  font-size: 17px;
+  margin-top: 12px;
+  color: #8a1c1c;
+}
+dl.glossar dd { margin: 2px 0 0 0; padding-left: 12px; border-left: 3px solid #d9cfb8; }
+
+/* ---------- Schnellwürfel (unten rechts) ---------- */
+#schnellwuerfel {
+  position: fixed;
+  right: 12px;
+  bottom: 12px;
+  z-index: 50;
+  font-size: 14px;
+}
+#schnellwuerfel .sw-knopf {
+  background: #8a1c1c;
+  color: #fff;
+  border: 2px solid #000;
+  padding: 6px 10px 6px 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+#schnellwuerfel .sw-knopf:hover { background: #a52828; }
+#schnellwuerfel .sw-panel {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 6px);
+  width: 250px;
+  background: #fbf7ee;
+  border: 3px solid #000;
+  padding: 8px;
+}
+#schnellwuerfel .sw-panel .wuerfel-mini { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; }
+#schnellwuerfel .sw-panel button { padding: 5px 0; font-size: 13px; }
+#schnellwuerfel .sw-erg {
+  background: #000;
+  color: #ffde85;
+  font-family: "Courier New", monospace;
+  text-align: center;
+  margin-top: 6px;
+  padding: 4px;
+  min-height: 2.6em;
+}
+#schnellwuerfel .sw-erg b { font-size: 26px; display: block; line-height: 1.1; }
+
+/* ---------- Fuß ---------- */
+.fuss {
+  border-top: 2px solid #000;
+  background: #d9cfb8;
+  padding: 10px 18px;
+  font-size: 12px;
+}
+
+/* ---------- Animation (ganz simpel) ---------- */
+@keyframes wackeln {
+  0% { transform: rotate(0); }
+  25% { transform: rotate(-8deg); }
+  50% { transform: rotate(6deg); }
+  75% { transform: rotate(-3deg); }
+  100% { transform: rotate(0); }
+}
+.wackelt { animation: wackeln .35s linear; }
+
+/* ---------- Handy ---------- */
+@media (max-width: 760px) {
+  body { padding: 0 0 70px; font-size: 15px; }
+  .seite { border-width: 0 0 3px 0; }
+  .kopf { padding: 10px 12px 8px; }
+  .kopf .titel { font-size: 24px; }
+  .kopf svg { width: 40px; height: 40px; }
+  .menue a { padding: 7px 10px; font-size: 13px; flex: 1 0 auto; text-align: center; border-bottom: 1px solid #000; }
+  main { padding: 12px 12px 24px; }
+  .anleitung-layout { grid-template-columns: 1fr; }
+  .inhalt-liste { position: static; }
+  .inhalt-liste ol { max-height: 0; overflow: hidden; }
+  .inhalt-liste.offen ol { max-height: none; }
+  .inhalt-liste h4 { cursor: pointer; margin-bottom: 0; }
+  .inhalt-liste h4::after { content: " [anzeigen]"; font-weight: normal; text-transform: none; letter-spacing: 0; color: #8a1c1c; }
+  .inhalt-liste.offen h4::after { content: " [ausblenden]"; }
+  .attribute { grid-template-columns: repeat(3, 1fr); }
+  .zwei-spalten, .kampf-felder { grid-template-columns: 1fr; }
+  .werte { grid-template-columns: repeat(2, 1fr); }
+  .grossergebnis { font-size: 52px; }
+  .wuerfelknopf { width: calc(25% - 6px); }
+}
+
+/* ---------- Drucken (Charakterbogen) ---------- */
+@media print {
+  html, body { background: #fff; padding: 0; }
+  .seite { border: 0; max-width: none; }
+  .kopf, .menue, .fuss, #schnellwuerfel, .nicht-drucken, .wurfzeile { display: none !important; }
+  main { padding: 0; }
+  fieldset { break-inside: avoid; }
+  input, select, textarea { border: 0; border-bottom: 1px solid #000; }
+  select { background-image: none; }
+  button.bonus, .attr .mod { background: #fff !important; }
+}

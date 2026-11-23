@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abenteuer – Die Würfelrunde</title>
+<meta name="description" content="Lichter am Steinbruch – ein fertiges D&amp;D-Einstiegsabenteuer für 4 Helden der Stufe 1, mit Vorlesetexten und Hinweisen für den Spielleiter.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpolygon points='20,2 36,11 36,29 20,38 4,29 4,11' fill='%238a1c1c' stroke='%23000' stroke-width='2'/%3E%3Ctext x='20' y='25' text-anchor='middle' font-family='Georgia' font-size='13' font-weight='bold' fill='%23fff'%3E20%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/stil.css">
+</head>
+<body>
+<div class="seite">
+  <header class="kopf">
+    <a href="index.html" title="Zur Startseite"><svg width="50" height="50" viewBox="0 0 40 40" aria-hidden="true">
+      <polygon points="20,2 36,11 36,29 20,38 4,29 4,11" fill="#5e1010" stroke="#fff" stroke-width="2"/>
+      <g fill="none" stroke="#fff" stroke-width="1">
+        <polygon points="20,9 30,26 10,26"/>
+        <line x1="20" y1="2" x2="20" y2="9"/><line x1="36" y1="11" x2="20" y2="9"/><line x1="4" y1="11" x2="20" y2="9"/>
+        <line x1="36" y1="11" x2="30" y2="26"/><line x1="36" y1="29" x2="30" y2="26"/><line x1="20" y1="38" x2="30" y2="26"/>
+        <line x1="20" y1="38" x2="10" y2="26"/><line x1="4" y1="29" x2="10" y2="26"/><line x1="4" y1="11" x2="10" y2="26"/>
+      </g>
+      <text x="20" y="22.5" text-anchor="middle" font-family="Georgia,serif" font-size="8" font-weight="bold" fill="#fff">20</text>
+    </svg></a>
+    <div>
+      <a href="index.html" class="titel">Die Würfelrunde</a>
+      <div class="untertitel">D&amp;D lernen, würfeln, losspielen</div>
+    </div>
+  </header>
+  <nav class="menue">
+    <a href="index.html">Start</a>
+    <a href="anleitung.html">Anleitung</a>
+    <a href="wuerfel.html">Würfel</a>
+    <a href="charakter.html">Charakterbogen</a>
+    <a href="spielleiter.html">Spielleiter</a>
+    <a href="abenteuer.html" class="aktiv">Abenteuer</a>
+    <a href="glossar.html">Glossar</a>
+  </nav>
+  <main>
+    <h1>Lichter am Steinbruch</h1>
+    <p><i>Ein Abenteuer für einen Abend.</i></p>
+    <table style="max-width:560px;">
+      <tr><th>Für</th><td>4 Helden der Stufe 1 (passt perfekt zu den <a href="charakter.html">Vorlage-Helden</a>)</td></tr>
+      <tr><th>Dauer</th><td>ca. 3–4 Stunden</td></tr>
+      <tr><th>Gegner</th><td>Goblins, evtl. Wölfe, ein Grottenschrat</td></tr>
+      <tr><th>Der SL braucht</th><td>diese Seite, die <a href="spielleiter.html">Spielleiter-Werkzeuge</a> und 10 Minuten Vorbereitung</td></tr>
+    </table>
+
+    <div class="tipp"><b>Für Spieler:</b> Hier nicht weiterlesen! Ab jetzt kommen Geheimnisse, die nur der Spielleiter kennen sollte.</div>
+
+    <h2>Worum es geht (nur für den SL)</h2>
+    <div class="sl-info">
+      <p>
+        In den Höhlen eines alten Steinbruchs nördlich des Dorfes Erlenbach lebt seit Jahren ein kleiner Goblinstamm.
+        Die Goblins haben ab und zu Hühner geklaut, aber sonst niemandem geschadet.
+      </p>
+      <p>
+        Vor drei Wochen kam <b>Krosk</b>, ein gieriger <b>Grottenschrat</b> (ein großer, behaarter Goblinverwandter), und hat sich zum Anführer gemacht.
+        Tief im Steinbruch hat er eine uralte <b>Zwergentür</b> mit riesigen Zahnrädern gefunden. Er glaubt, dahinter liegt ein Schatz –
+        aber der Mechanismus ist verrostet. Deshalb hat er den Müller <b>Hannes</b> entführen lassen: Der kennt sich mit Zahnrädern und Mühlen aus.
+      </p>
+      <p>
+        <b>Die Wendung:</b> Die Goblins sind nicht die eigentlichen Bösen. Sie haben Angst vor Krosk. Wer mit ihnen redet statt nur zu kämpfen,
+        bekommt Hilfe – vor allem vom kleinen Goblin <b>Snikk</b>.
+      </p>
+    </div>
+
+    <h3>Ablauf auf einen Blick</h3>
+    <ol>
+      <li><a href="#szene1">Der Schiefe Kessel</a> – ein Junge bittet um Hilfe. Infos sammeln.</li>
+      <li><a href="#szene2">Durch den Erlenwald</a> – zwei Wege, ein Hinterhalt oder Wölfe.</li>
+      <li><a href="#szene3">Der Steinbruch</a> – das Goblinlager. Schleichen, reden oder kämpfen.</li>
+      <li><a href="#szene4">Die Zwergentür</a> – Endkampf gegen Krosk, Hannes retten.</li>
+      <li><a href="#ende">Was hinter der Tür liegt</a> – Belohnung und Ausblick.</li>
+    </ol>
+
+    <!-- ================================================= -->
+    <h2 id="szene1">Szene 1: Der Schiefe Kessel</h2>
+    <p>Die Helden kennen sich schon und reisen seit ein paar Tagen zusammen. Bevor es losgeht, darf sich jeder Spieler kurz vorstellen: Name, wie der Charakter aussieht und eine Sache, die man sofort an ihm bemerkt.</p>
+    <div class="vorlesen">
+      Herbst im Dorf Erlenbach. Ihr vier sitzt im „Schiefen Kessel“, der einzigen Taverne weit und breit. Draußen peitscht der Regen
+      gegen die Fensterläden, drinnen knistert das Feuer, und der Eintopf schmeckt nach zu viel Kümmel.<br><br>
+      Plötzlich fliegt die Tür auf. Ein Junge stolpert herein, etwa zwölf Jahre alt, schlammverschmiert, mit einer blutenden Schramme an der Stirn.
+      „Bitte! Sie haben meinen Vater mitgenommen! Kleine Gestalten mit Fackeln … am alten Steinbruch!“<br><br>
+      Der Wirt, ein bulliger Mann namens Grumm, stellt langsam seinen Krug ab. „Goblins. Seit Wochen klauen die Hühner. Aber Menschen haben sie noch nie geholt …“<br><br>
+      Die anderen Gäste starren in ihre Becher. Niemand steht auf. Der Junge sieht sich verzweifelt um – und sein Blick bleibt an euch hängen.
+    </div>
+    <p>Dann fragst du: <b>„Was tut ihr?“</b> – und lässt die Spieler machen.</p>
+
+    <h3>Wer ist hier?</h3>
+    <ul>
+      <li><b>Tobi</b>, 12, Sohn des Müllers. Mutig, aber völlig fertig. Will unbedingt mitkommen (die Helden sollten ihn überreden zu bleiben).</li>
+      <li><b>Grumm</b>, der Wirt. Brummig, aber mit gutem Herz. Kennt die Gegend.</li>
+      <li><b>Die alte Wenna</b>, Kräuterfrau, sitzt still in der Ecke am Feuer und raucht Pfeife. Weiß mehr, als sie sagt.</li>
+    </ul>
+
+    <h3>Was die Helden herausfinden können</h3>
+    <div class="tabelle-wrap">
+    <table>
+      <tr><th>Wen fragen?</th><th>Was sie erfahren</th></tr>
+      <tr>
+        <td>Tobi</td>
+        <td>
+          Sein Vater Hannes hat am Abend noch am Mühlrad gearbeitet. Dann kamen etwa sechs kleine Gestalten mit Fackeln – und
+          <b>ein riesiger Schatten mit Bärenfell</b>, der seinen Vater wie einen Mehlsack über die Schulter geworfen hat. Sie sind nach Norden, Richtung Steinbruch.<br>
+          <i>Mit einer Probe auf Motiv erkennen oder Überzeugen (SG 10), um ihn zu beruhigen, fällt ihm noch ein:</i>
+          „Der Große hat gebrüllt: <i>Zahnrad-Mann! Du machst Tür auf!</i>“
+        </td>
+      </tr>
+      <tr>
+        <td>Grumm</td>
+        <td>
+          Der Steinbruch liegt eine Stunde nördlich, die Waldstraße führt direkt hin. Früher haben dort Zwerge Stein gebrochen,
+          „aber das ist hundert Jahre her“. Die Goblins klauen seit drei Wochen viel mehr als sonst.<br>
+          Belohnung: „Die Vorsteherin zahlt euch sicher <b>50 Goldmünzen</b>, wenn ihr Hannes zurückbringt. Und bei mir trinkt ihr umsonst.“
+        </td>
+      </tr>
+      <tr>
+        <td>Die alte Wenna</td>
+        <td>
+          Spricht nur, wenn man sie höflich anspricht (oder Überzeugen SG 12). Sie kennt den <b>alten Karrenweg</b>, der von Westen zum oberen Rand des Steinbruchs führt –
+          langsamer, aber man kommt ungesehen an. Und: „Die Zwerge haben damals etwas hinter einer Tür eingeschlossen, die nur mit Zahnrädern aufgeht. Manches sollte zu bleiben.“<br>
+          Wenn die Helden nett sind, schenkt sie ihnen <b>2 Heiltränke</b> (je <span class="w">2W4+2</span>).
+        </td>
+      </tr>
+    </table>
+    </div>
+    <div class="tipp"><b>Tipp:</b> Tobi hat noch einen „Schatz“: einen glatten grünen Kieselstein, den er „Glücksstein“ nennt. Er drückt ihn einem Helden in die Hand. (Wenn du magst: Einmal im Abenteuer darf dieser Held damit einen Wurf wiederholen.)</div>
+
+    <!-- ================================================= -->
+    <h2 id="szene2">Szene 2: Durch den Erlenwald</h2>
+    <p>Die Helden haben zwei Möglichkeiten. Lass sie entscheiden.</p>
+
+    <h3>Weg A: Die Waldstraße (1 Stunde)</h3>
+    <div class="vorlesen">
+      Die Straße ist ein schlammiger Pfad zwischen alten Erlen. Der Regen lässt nach, aber von den Ästen tropft es ununterbrochen.
+      Irgendwo ruft ein Käuzchen. Dann wird es plötzlich still.
+    </div>
+    <div class="sl-info">
+      <p><b>Hinterhalt!</b> Zwei Goblins haben über die Straße eine Schnur mit Blechdosen gespannt und hocken im Gebüsch.</p>
+      <ul>
+        <li>Wer vorne läuft, darf eine <b>Wahrnehmungs-Probe (SG 12)</b> machen. Bei Erfolg sieht er die Schnur.</li>
+        <li>Läuft jemand hinein, scheppert es laut, und die Goblins greifen <b>überrascht</b> an: In der ersten Runde können die Helden nichts tun.</li>
+        <li>Sehen die Helden die Falle, können sie die Goblins selbst überraschen oder ansprechen.</li>
+      </ul>
+      <p><b>Gegner:</b> 2 <a href="spielleiter.html#monster">Goblins</a> (RK 15, je 7 TP, Krummsäbel +4, <span class="w">1W6+2</span>).</p>
+      <p>Fällt der erste Goblin, wirft der zweite seine Waffe weg und quiekt: „Nicht töten! Snikk hilft! Snikk hilft!“ Das ist <b>Snikk</b>. Wenn die Helden ihn verschonen, erzählt er alles aus dem Abschnitt „Worum es geht“ (in schlechtem Deutsch) und zeigt ihnen einen Weg ins Lager.</p>
+    </div>
+
+    <h3>Weg B: Der alte Karrenweg (2 Stunden)</h3>
+    <div class="vorlesen">
+      Der Weg ist kaum noch zu erkennen. Brombeeren haben ihn fast verschluckt, umgestürzte Bäume liegen kreuz und quer.
+      Ab und zu seht ihr alte Wagenspuren, tief in den Stein gefahren. Hier ist schon lange niemand mehr gegangen.
+    </div>
+    <div class="sl-info">
+      <ul>
+        <li>Ein Held macht eine <b>Überlebenskunst-Probe (SG 12)</b>, um den Weg nicht zu verlieren.</li>
+        <li><b>Erfolg:</b> Die Helden kommen ungesehen am oberen Rand des Steinbruchs an. In Szene 3 haben sie <b>Vorteil</b> beim Schleichen und einen guten Überblick.</li>
+        <li><b>Misserfolg:</b> Sie verirren sich und laufen zwei hungrigen <a href="spielleiter.html#monster">Wölfen</a> über den Weg (RK 13, je 11 TP, Biss +4, <span class="w">2W4+2</span>). Wer Futter wirft oder die Tiere mit <i>Mit Tieren umgehen</i> (SG 13) beruhigt, kann den Kampf vermeiden.</li>
+      </ul>
+    </div>
+    <p><b>Auf beiden Wegen:</b> Kurz vor dem Ziel finden die Helden die Mütze von Hannes im Schlamm. Mit Überlebenskunst (SG 10) sehen sie: Hier sind viele kleine Füße gelaufen – und ein paar sehr große.</p>
+
+    <!-- ================================================= -->
+    <h2 id="szene3">Szene 3: Der Steinbruch</h2>
+    <div class="vorlesen">
+      Vor euch öffnet sich ein riesiges Loch im Berg, in Stufen gehauen wie eine Treppe für Riesen. Regenwasser sammelt sich in Pfützen.
+      Unten flackert ein Lagerfeuer unter einer zerrissenen Plane. Zwei kleine Gestalten mit spitzen Ohren hocken davor und streiten sich um einen Hühnerknochen.
+      Daneben steht ein wackeliger Holzkäfig voller gackernder Hühner. In der Nordwand gähnt ein dunkler Tunnel – umrahmt von uralten, eingemeißelten Zwergenrunen.
+      Aus der Tiefe hört ihr ein rhythmisches <i>Klonk … klonk … klonk</i>, wie ein Hammer auf Metall.
+    </div>
+    <div class="sl-info">
+      <p>Am Feuer sitzen <b>2 Goblins</b> (Pib und Grunz). Es gibt viele Möglichkeiten – belohne gute Ideen:</p>
+      <ul>
+        <li><b>Schleichen:</b> Gruppenprobe auf Heimlichkeit (SG 12). Wenn mindestens die Hälfte der Helden es schafft, kommen alle unbemerkt in den Tunnel.</li>
+        <li><b>Ablenken:</b> Den Hühnerkäfig öffnen! Die Goblins rennen fluchend den Hühnern hinterher. (Fingerfertigkeit SG 10, um es heimlich zu tun.)</li>
+        <li><b>Reden:</b> Die Goblins sind hungrig und haben Angst vor Krosk. Mit Überzeugen oder Einschüchtern (SG 13) – oder automatisch, wenn Snikk dabei ist – lassen sie die Helden durch und verraten, dass Krosk „ganz unten bei der großen Tür“ ist.</li>
+        <li><b>Kämpfen:</b> 2 Goblins wie oben. Einer versucht, in den Tunnel zu rennen und Krosk zu warnen. Schafft er es, ist Krosk in Szene 4 vorbereitet und kann nicht überrascht werden.</li>
+      </ul>
+      <p><b>Der Tunnel:</b> Ein enger Gang führt etwa 50 m schräg nach unten. Auf halber Strecke liegt eine <b>Falle</b> der alten Zwerge: eine lockere Bodenplatte.</p>
+      <ul>
+        <li>Wahrnehmung oder Nachforschungen (SG 13): Man bemerkt die Platte und kann drübersteigen.</li>
+        <li>Sonst: Steine fallen von der Decke. Alle in der Nähe machen einen GES-Rettungswurf (SG 12). Misserfolg: <span class="w">2W4</span> Wuchtschaden, Erfolg: halb so viel.</li>
+      </ul>
+    </div>
+
+    <!-- ================================================= -->
+    <h2 id="szene4">Szene 4: Die Zwergentür</h2>
+    <div class="vorlesen">
+      Der Gang endet in einer großen Höhle. Fackeln stecken in rostigen Haltern an den Wänden. Die ganze Rückwand ist ein gewaltiges Tor aus dunklem Metall,
+      übersät mit Zahnrädern – manche so groß wie ein Wagenrad, die meisten braun vor Rost.<br><br>
+      Davor kniet ein Mann in einem mehligen Hemd, eine Kette am Fuß, und hämmert verzweifelt an einem Zahnrad herum. Daneben steht ein Goblin mit einer Fackel.<br><br>
+      Und dann seht ihr <i>ihn</i>: fast zwei Meter groß, zottiges Fell, lange Arme, ein Morgenstern über der Schulter. Er dreht langsam den Kopf zu euch und grinst.
+      „Kleine Leute. Kommen, um Krosk zu helfen? Nein? Dann … Abendessen.“
+    </div>
+    <div class="sl-info">
+      <p><b>Gegner:</b></p>
+      <ul>
+        <li><b>Krosk</b>, <a href="spielleiter.html#monster">Grottenschrat</a>: RK 16, <b>27 TP</b>, Morgenstern +4, <span class="w">2W8+2</span>. Trifft er jemanden, der überrascht ist, macht er <span class="w">2W6</span> extra.</li>
+        <li><b>Gnatz</b>, Goblin: RK 15, 7 TP, Krummsäbel +4, <span class="w">1W6+2</span>.</li>
+      </ul>
+      <div class="achtung"><b>Achtung, das kann tödlich sein!</b> Ein Treffer von Krosk macht im Schnitt 11 Schaden – Liora hat nur 7 TP. Wenn deine Gruppe klein oder unerfahren ist, gib Krosk nur <b>20 TP</b>, lass Gnatz weg oder lass Krosk zuerst ein paar Runden nur prahlen.</div>
+      <p><b>Was die Helden nutzen können:</b></p>
+      <ul>
+        <li><b>Gnatz will eigentlich gar nicht kämpfen.</b> Ein Held kann ihn mit Überzeugen oder Einschüchtern (SG 12, Aktion) zum Weglaufen bringen. Ist Snikk dabei, ruft er Gnatz zu – dann flieht Gnatz sofort.</li>
+        <li><b>Hannes befreien:</b> Die Kette ist an einem rostigen Ring befestigt. Athletik (SG 12) zum Herausreißen oder Diebeswerkzeug (SG 10). Hannes ruft dann: <i>„Der Hebel! Links neben dem Tor! Ich hab das große Rad fast geschafft!“</i></li>
+        <li><b>Der Hebel:</b> Wer ihn zieht (eine Aktion, auch ohne Hannes zu befreien – aber dann weiß man nicht, was er tut), lässt das Tor mit einem Kreischen anrucken. Ein riesiges Zahnrad schwingt herum: Alle direkt vor dem Tor (meistens Krosk!) machen einen GES-Rettungswurf (SG 12). Misserfolg: <span class="w">2W6</span> Wuchtschaden und umgeworfen (liegend).</li>
+        <li><b>Krosk ist gierig:</b> Fällt er unter 10 TP, versucht er, sich mit einem Sack voller Goblinbeute davonzumachen. Die Helden können ihn laufen lassen – oder verfolgen.</li>
+      </ul>
+      <p><b>Wenn alle Helden umfallen:</b> Krosk tötet sie nicht – er braucht Arbeiter. Die Helden wachen angekettet neben Hannes auf. Jetzt beginnt ein Ausbruch (und Snikk schleicht sich vielleicht mit einem Schlüssel heran).</p>
+    </div>
+
+    <!-- ================================================= -->
+    <h2 id="ende">Was hinter der Tür liegt</h2>
+    <div class="vorlesen">
+      Mit einem letzten Kreischen schwingt das Tor auf. Staub rieselt herab. Dahinter liegt eine kleine, runde Kammer, die seit hundert Jahren niemand betreten hat.
+      Auf einem steinernen Tisch liegen ein Kriegshammer, ein paar Beutel – und eine Steintafel mit einer eingeritzten Karte.
+    </div>
+    <ul>
+      <li><b>60 Goldmünzen</b> in alten Zwergenprägungen</li>
+      <li><b>Zwergischer Kriegshammer</b> – fühlt sich leicht an und summt leise. (Magische Waffe: +1 auf Treffer und Schaden, <span class="w">1W8+1</span>.)</li>
+      <li><b>2 Heiltränke</b></li>
+      <li><b>Die Steintafel:</b> eine Karte, die einen zweiten Eingang tief im Gebirge zeigt, markiert mit einem Wappen. <i>Spielt ihr mit Aldric: Es ist das Wappen seines Klans!</i> – der perfekte Aufhänger für das nächste Abenteuer.</li>
+    </ul>
+    <p>Zurück im Dorf fällt Tobi seinem Vater um den Hals. Die Vorsteherin zahlt die <b>50 Goldmünzen</b>, Grumm schenkt den ganzen Abend aus, und die alte Wenna nickt den Helden einmal zu, als wüsste sie mehr.</p>
+    <div class="tipp"><b>Aufstieg:</b> Nach diesem Abenteuer steigen alle Helden auf <b>Stufe 2</b>. Im Charakterbogen einfach die Stufe ändern – die Trefferpunkte werden automatisch vorgeschlagen.</div>
+
+    <h2>Wenn die Spieler etwas ganz anderes machen</h2>
+    <p>Das werden sie. Keine Panik:</p>
+    <ul>
+      <li>Sie wollen nicht helfen? Lass Tobi alleine losrennen. Spätestens jetzt gehen sie mit.</li>
+      <li>Sie verbünden sich mit den Goblins gegen Krosk? Großartig! Die Goblins helfen im Endkampf (jeder Goblin lenkt Krosk ab: Die Helden haben Vorteil auf Angriffe).</li>
+      <li>Sie wollen mit Krosk verhandeln? Er ist dumm und gierig. Wer ihm einen größeren Schatz verspricht (Täuschen SG 14), kann ihn weglocken.</li>
+      <li>Sie kommen auf eine Idee, die hier nicht steht? Frag dich: Wäre das cool? Wenn ja – lass es mit einer passenden Probe zu.</li>
+    </ul>
+  </main>
+  <footer class="fuss">
+    Selbstgebaut für unsere Runde. Regeln vereinfacht nach der 5. Edition von Dungeons &amp; Dragons (Stand 2024) –
+    für die vollständigen Regeln schaut in die kostenlosen Grundregeln auf <a href="https://www.dndbeyond.com/">D&amp;D Beyond</a>.
+    Dungeons &amp; Dragons ist eine Marke von Wizards of the Coast; das hier ist eine private Fanseite.
+  </footer>
+</div>
+<script src="js/gemeinsam.js"></script>
+</body>
+</html>

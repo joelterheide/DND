@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spielleiter – Die Würfelrunde</title>
+<meta name="description" content="Werkzeuge für den D&amp;D-Spielleiter: Initiative-Liste, Monster, Generatoren für Namen, Tavernen und Abenteuer, Zustände.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpolygon points='20,2 36,11 36,29 20,38 4,29 4,11' fill='%238a1c1c' stroke='%23000' stroke-width='2'/%3E%3Ctext x='20' y='25' text-anchor='middle' font-family='Georgia' font-size='13' font-weight='bold' fill='%23fff'%3E20%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/stil.css">
+</head>
+<body>
+<div class="seite">
+  <header class="kopf">
+    <a href="index.html" title="Zur Startseite"><svg width="50" height="50" viewBox="0 0 40 40" aria-hidden="true">
+      <polygon points="20,2 36,11 36,29 20,38 4,29 4,11" fill="#5e1010" stroke="#fff" stroke-width="2"/>
+      <g fill="none" stroke="#fff" stroke-width="1">
+        <polygon points="20,9 30,26 10,26"/>
+        <line x1="20" y1="2" x2="20" y2="9"/><line x1="36" y1="11" x2="20" y2="9"/><line x1="4" y1="11" x2="20" y2="9"/>
+        <line x1="36" y1="11" x2="30" y2="26"/><line x1="36" y1="29" x2="30" y2="26"/><line x1="20" y1="38" x2="30" y2="26"/>
+        <line x1="20" y1="38" x2="10" y2="26"/><line x1="4" y1="29" x2="10" y2="26"/><line x1="4" y1="11" x2="10" y2="26"/>
+      </g>
+      <text x="20" y="22.5" text-anchor="middle" font-family="Georgia,serif" font-size="8" font-weight="bold" fill="#fff">20</text>
+    </svg></a>
+    <div>
+      <a href="index.html" class="titel">Die Würfelrunde</a>
+      <div class="untertitel">D&amp;D lernen, würfeln, losspielen</div>
+    </div>
+  </header>
+  <nav class="menue">
+    <a href="index.html">Start</a>
+    <a href="anleitung.html">Anleitung</a>
+    <a href="wuerfel.html">Würfel</a>
+    <a href="charakter.html">Charakterbogen</a>
+    <a href="spielleiter.html" class="aktiv">Spielleiter</a>
+    <a href="abenteuer.html">Abenteuer</a>
+    <a href="glossar.html">Glossar</a>
+  </nav>
+  <main>
+    <h1>Spielleiter-Werkzeuge</h1>
+    <p>Alles, was der SL während des Spiels braucht. Die Initiative-Liste bleibt gespeichert, auch wenn ihr die Seite neu ladet.</p>
+    <p class="klein">
+      Springe zu: <a href="#initiative">Initiative</a> · <a href="#monster">Monster</a> ·
+      <a href="#generatoren">Generatoren</a> · <a href="#spickzettel">Spickzettel</a> · <a href="#zustaende">Zustände</a>
+    </p>
+
+    <h2 id="initiative">Initiative-Liste</h2>
+    <fieldset>
+      <legend>Neu dazu</legend>
+      <div class="zeile">
+        <label>Name: <input type="text" id="i-name" placeholder="z. B. Brena" style="width:150px;"></label>
+        <label>Initiative: <input type="number" id="i-ini" placeholder="würfeln" style="width:90px;"></label>
+        <label>GES-Bonus: <input type="number" id="i-bonus" value="0" style="width:60px;"></label>
+      </div>
+      <div class="zeile">
+        <label>TP: <input type="number" id="i-tp" style="width:70px;"></label>
+        <label>RK: <input type="number" id="i-rk" style="width:60px;"></label>
+        <label><input type="checkbox" id="i-monster"> Monster / NSC</label>
+        <button type="button" class="dunkel" id="i-dazu">Hinzufügen</button>
+      </div>
+      <p class="klein">Initiative leer lassen = die Seite würfelt W20 + GES-Bonus.</p>
+      <div class="zeile">
+        <button type="button" class="klein-k" id="i-helden">Die 4 Vorlage-Helden dazu</button>
+        <button type="button" class="klein-k" id="i-gespeicherte">Meine gespeicherten Charaktere dazu</button>
+      </div>
+    </fieldset>
+
+    <div class="zeile">
+      <button type="button" class="dunkel" id="i-weiter">Nächster Zug »</button>
+      <b>Runde: <span id="i-runde">1</span></b>
+      <button type="button" class="klein-k" id="i-start">Kampf neu starten</button>
+      <button type="button" class="klein-k" id="i-monster-weg">Besiegte Monster entfernen</button>
+      <button type="button" class="klein-k" id="i-leeren">Liste leeren</button>
+    </div>
+    <div class="ini-liste" id="i-liste"></div>
+    <p class="klein">Bei TP eine Zahl eintippen und <b>−</b> (Schaden) oder <b>+</b> (Heilung) drücken. Monster mit 0 TP werden durchgestrichen.</p>
+
+    <h2 id="monster">Monster</h2>
+    <p>Ein paar typische Gegner für niedrige Stufen. Die roten Kästchen kann man anklicken, um Schaden zu würfeln. <b>HG</b> = Herausforderungsgrad: Ein Monster mit HG 1 ist ungefähr für eine Gruppe von 4 Helden der Stufe 1 eine faire Herausforderung.</p>
+    <div class="zeile">
+      <label><input type="checkbox" id="m-tpwurf"> TP auswürfeln statt Durchschnitt nehmen</label>
+    </div>
+    <div class="monster-karten" id="monster-karten"></div>
+    <div class="tipp"><b>Faustregel für Stufe 1:</b> Pro Held ungefähr ein Gegner mit HG 1/4 (Goblin, Wolf, Skelett) ist ein normaler Kampf. Ein HG-1-Monster plus ein, zwei Helfer ist ein guter Endkampf. Und ein Oger ist eher ein „Lauft!“-Moment.</div>
+
+    <h2 id="generatoren">Generatoren</h2>
+    <p>Für alles, was ihr nicht geplant habt – also für fast alles.</p>
+    <div class="zwei-spalten">
+      <fieldset>
+        <legend>Name</legend>
+        <div class="zeile">
+          <select id="g-volk">
+            <option value="egal">beliebiges Volk</option>
+            <option value="mensch">Mensch</option>
+            <option value="elf">Elf</option>
+            <option value="zwerg">Zwerg</option>
+            <option value="halbling">Halbling</option>
+            <option value="ork">Ork</option>
+          </select>
+          <button type="button" class="dunkel" data-gen="name">Name</button>
+        </div>
+        <div class="gen-ausgabe" id="g-name"></div>
+      </fieldset>
+      <fieldset>
+        <legend>Taverne</legend>
+        <button type="button" class="dunkel" data-gen="taverne">Tavernenname</button>
+        <div class="gen-ausgabe" id="g-taverne"></div>
+      </fieldset>
+    </div>
+    <fieldset>
+      <legend>Nichtspielercharakter (NSC)</legend>
+      <button type="button" class="dunkel" data-gen="nsc">NSC erfinden</button>
+      <div class="gen-ausgabe" id="g-nsc"></div>
+    </fieldset>
+    <fieldset>
+      <legend>Abenteuer-Idee</legend>
+      <button type="button" class="dunkel" data-gen="abenteuer">Idee würfeln</button>
+      <div class="gen-ausgabe" id="g-abenteuer"></div>
+    </fieldset>
+    <fieldset>
+      <legend>Beute</legend>
+      <button type="button" class="dunkel" data-gen="beute">Was liegt in der Truhe?</button>
+      <div class="gen-ausgabe" id="g-beute"></div>
+    </fieldset>
+
+    <h2 id="spickzettel">Spickzettel</h2>
+    <div class="zwei-spalten">
+      <div>
+        <h4>Schwierigkeitsgrade</h4>
+        <table>
+          <tr><th>SG</th><th>Schwierigkeit</th></tr>
+          <tr><td>5</td><td>sehr leicht</td></tr>
+          <tr><td>10</td><td>leicht</td></tr>
+          <tr><td>15</td><td>mittel</td></tr>
+          <tr><td>20</td><td>schwer</td></tr>
+          <tr><td>25</td><td>sehr schwer</td></tr>
+          <tr><td>30</td><td>fast unmöglich</td></tr>
+        </table>
+      </div>
+      <div>
+        <h4>Deckung</h4>
+        <table>
+          <tr><th>Deckung</th><th>Wirkung</th></tr>
+          <tr><td>Halbe (Mauerrest, Tisch)</td><td>+2 auf RK und GES-Rettungswürfe</td></tr>
+          <tr><td>Dreiviertel (Schießscharte)</td><td>+5 auf RK und GES-Rettungswürfe</td></tr>
+          <tr><td>Volle</td><td>kann nicht direkt angegriffen werden</td></tr>
+        </table>
+        <h4>Fallschaden</h4>
+        <p><span class="w">1W6</span> pro 3 m Fall, höchstens 20W6.</p>
+      </div>
+    </div>
+    <h4>Wenn du nicht weiter weißt</h4>
+    <ul>
+      <li>Kein Würfeln, wenn nichts auf dem Spiel steht oder es keinen Zeitdruck gibt. Dann klappt es einfach.</li>
+      <li>Regel vergessen? Entscheide fair, sag „so machen wir es heute“ und schlag es danach nach.</li>
+      <li>Spieler haben eine verrückte Idee? Gib ihr eine Chance – mit einem passenden SG.</li>
+      <li>Kampf dauert zu lange? Lass Monster fliehen oder aufgeben, wenn sie fast besiegt sind.</li>
+    </ul>
+
+    <h2 id="zustaende">Zustände</h2>
+    <div class="tabelle-wrap">
+      <table id="zustand-tabelle">
+        <tr><th>Zustand</th><th>Was er bewirkt (kurz)</th></tr>
+      </table>
+    </div>
+  </main>
+  <footer class="fuss">
+    Selbstgebaut für unsere Runde. Regeln vereinfacht nach der 5. Edition von Dungeons &amp; Dragons (Stand 2024) –
+    für die vollständigen Regeln schaut in die kostenlosen Grundregeln auf <a href="https://www.dndbeyond.com/">D&amp;D Beyond</a>.
+    Dungeons &amp; Dragons ist eine Marke von Wizards of the Coast; das hier ist eine private Fanseite.
+  </footer>
+</div>
+<script src="js/gemeinsam.js"></script>
+<script src="js/daten.js"></script>
+<script src="js/spielleiter.js"></script>
+</body>
+</html>

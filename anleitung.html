@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anleitung – Die Würfelrunde</title>
+<meta name="description" content="D&amp;D Schritt für Schritt lernen: 13 kurze Lektionen mit Übungen, Würfeln und einem Probekampf.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpolygon points='20,2 36,11 36,29 20,38 4,29 4,11' fill='%238a1c1c' stroke='%23000' stroke-width='2'/%3E%3Ctext x='20' y='25' text-anchor='middle' font-family='Georgia' font-size='13' font-weight='bold' fill='%23fff'%3E20%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/stil.css">
+</head>
+<body>
+<div class="seite">
+  <header class="kopf">
+    <a href="index.html" title="Zur Startseite"><svg width="50" height="50" viewBox="0 0 40 40" aria-hidden="true">
+      <polygon points="20,2 36,11 36,29 20,38 4,29 4,11" fill="#5e1010" stroke="#fff" stroke-width="2"/>
+      <g fill="none" stroke="#fff" stroke-width="1">
+        <polygon points="20,9 30,26 10,26"/>
+        <line x1="20" y1="2" x2="20" y2="9"/><line x1="36" y1="11" x2="20" y2="9"/><line x1="4" y1="11" x2="20" y2="9"/>
+        <line x1="36" y1="11" x2="30" y2="26"/><line x1="36" y1="29" x2="30" y2="26"/><line x1="20" y1="38" x2="30" y2="26"/>
+        <line x1="20" y1="38" x2="10" y2="26"/><line x1="4" y1="29" x2="10" y2="26"/><line x1="4" y1="11" x2="10" y2="26"/>
+      </g>
+      <text x="20" y="22.5" text-anchor="middle" font-family="Georgia,serif" font-size="8" font-weight="bold" fill="#fff">20</text>
+    </svg></a>
+    <div>
+      <a href="index.html" class="titel">Die Würfelrunde</a>
+      <div class="untertitel">D&amp;D lernen, würfeln, losspielen</div>
+    </div>
+  </header>
+  <nav class="menue">
+    <a href="index.html">Start</a>
+    <a href="anleitung.html" class="aktiv">Anleitung</a>
+    <a href="wuerfel.html">Würfel</a>
+    <a href="charakter.html">Charakterbogen</a>
+    <a href="spielleiter.html">Spielleiter</a>
+    <a href="abenteuer.html">Abenteuer</a>
+    <a href="glossar.html">Glossar</a>
+  </nav>
+  <main>
+    <h1>Die Anleitung</h1>
+    <p>13 kurze Lektionen. Lies sie der Reihe nach – jede dauert nur ein paar Minuten und hat eine kleine Übung zum Ausprobieren. Dein Fortschritt wird gespeichert.</p>
+    <div class="fortschritt" id="fortschritt" aria-hidden="true"></div>
+
+    <div class="anleitung-layout">
+      <nav class="inhalt-liste" id="inhalt-liste">
+        <h4>Lektionen</h4>
+        <ol></ol>
+      </nav>
+
+      <div id="lektionen">
+
+        <!-- ===================== 1 ===================== -->
+        <section class="lektion" id="l-1" data-titel="Was ist D&amp;D?">
+          <h2>1. Was ist D&amp;D überhaupt?</h2>
+          <p>
+            <b>Dungeons &amp; Dragons</b> ist ein Rollenspiel, das man am Tisch spielt – mit Stift, Papier und Würfeln.
+            Es gibt kein Spielbrett und keine Karten. Ihr erzählt zusammen eine Geschichte, und die Regeln und Würfel
+            entscheiden, was dabei gelingt und was schiefgeht.
+          </p>
+          <h3>Wer macht was?</h3>
+          <ul>
+            <li><b>Der Spielleiter (SL)</b> – auf Englisch <i>Dungeon Master</i> (DM). Er beschreibt die Welt, spielt alle Nebenfiguren und Monster und entscheidet, wann gewürfelt wird. Er ist Erzähler und Schiedsrichter, <u>nicht</u> der Gegner der Spieler.</li>
+            <li><b>Die Spieler</b> – jeder spielt genau einen eigenen Helden, den <b>Spielercharakter</b> (SC). Du entscheidest, was dein Charakter sagt und tut.</li>
+          </ul>
+          <h3>So läuft das Spiel ab</h3>
+          <ol>
+            <li>Der SL beschreibt eine Situation: <i>„Ihr steht vor einer alten Holztür. Dahinter hört ihr leises Kratzen.“</i></li>
+            <li>Die Spieler sagen, was ihre Charaktere tun: <i>„Ich lege mein Ohr an die Tür.“</i></li>
+            <li>Der SL entscheidet, ob gewürfelt werden muss – und erzählt, was passiert.</li>
+            <li>Und dann wieder von vorne. Stundenlang. :)</li>
+          </ol>
+          <div class="tipp"><b>Wichtig:</b> Bei D&amp;D gewinnt keiner gegen die anderen. Die Gruppe arbeitet zusammen, und das Ziel ist eine Geschichte, über die ihr noch Wochen später redet.</div>
+
+          <div class="frage" data-auto>
+            <p class="f">Wer gewinnt eine Runde D&amp;D?</p>
+            <div class="antworten">
+              <button type="button">Der Spieler mit den meisten Goldmünzen</button>
+              <button type="button">Der Spielleiter, wenn alle Helden sterben</button>
+              <button type="button" data-ok>Niemand – ihr erlebt gemeinsam eine Geschichte</button>
+            </div>
+            <p class="erkl">Genau. Der SL ist kein Gegner. Wenn alle Spaß hatten, habt ihr alles richtig gemacht.</p>
+          </div>
+        </section>
+
+        <!-- ===================== 2 ===================== -->
+        <section class="lektion" id="l-2" data-titel="Die Würfel">
+          <h2>2. Die Würfel</h2>
+          <p>D&amp;D benutzt sieben verschiedene Würfel. Man schreibt sie mit <b>W</b> und der Zahl ihrer Seiten (auf Englisch mit <b>d</b> für <i>die</i>):</p>
+          <div id="wuerfel-galerie" class="wuerfelreihe"></div>
+          <div class="tabelle-wrap">
+          <table>
+            <tr><th>Würfel</th><th>Wofür man ihn meistens braucht</th></tr>
+            <tr><td><b>W20</b></td><td>Der wichtigste! Für alle Proben, Angriffe und Rettungswürfe – also immer, wenn es heißt: <i>Klappt das?</i></td></tr>
+            <tr><td>W4</td><td>Schaden von Dolchen, kleine Heilzauber</td></tr>
+            <tr><td>W6</td><td>Kurzschwert, Kurzbogen, Feuerball (8W6!)</td></tr>
+            <tr><td>W8</td><td>Langschwert, Heilzauber</td></tr>
+            <tr><td>W10</td><td>Schwere Waffen, Feuerpfeil</td></tr>
+            <tr><td>W12</td><td>Große Zweihandaxt, Trefferpunkte des Barbaren</td></tr>
+            <tr><td>W%</td><td>Zwei W10 (Zehner und Einer) für Zahlen von 1 bis 100 – selten, z.&nbsp;B. für Zufallstabellen</td></tr>
+          </table>
+          </div>
+          <h3>Die Schreibweise</h3>
+          <p><b>2W6+3</b> heißt: Wirf zwei sechsseitige Würfel, zähle sie zusammen und rechne 3 dazu. Klick auf die roten Kästchen, um es auszuprobieren:</p>
+          <ul>
+            <li><span class="w">1W20</span> – einmal den Zwanziger</li>
+            <li><span class="w">2W6+3</span> – zwei Sechser plus 3</li>
+            <li><span class="w">1W8+2</span> – Langschwert-Schaden mit Stärke +2</li>
+            <li><span class="w">8W6</span> – ein Feuerball. Autsch.</li>
+          </ul>
+          <div class="tipp"><b>Merksatz:</b> Der <b>W20</b> entscheidet, <i>ob</i> etwas klappt. Die anderen Würfel entscheiden, <i>wie viel</i> – also wie viel Schaden oder Heilung.</div>
+
+          <div class="frage" data-auto>
+            <p class="f">Der SL sagt: „Du nimmst 3W8 Schaden.“ Was machst du?</p>
+            <div class="antworten">
+              <button type="button">Einen W8 werfen und mal 3 nehmen</button>
+              <button type="button" data-ok>Drei W8 werfen und zusammenzählen</button>
+              <button type="button">Einen W3 und einen W8 werfen</button>
+            </div>
+            <p class="erkl">Richtig ist: drei Achter werfen und addieren. Mal nehmen geht theoretisch auch, aber dann kommen viel öfter Extremwerte raus.</p>
+          </div>
+        </section>
+
+        <!-- ===================== 3 ===================== -->
+        <section class="lektion" id="l-3" data-titel="Attribute">
+          <h2>3. Attribute &amp; Modifikatoren</h2>
+          <p>Jeder Charakter hat sechs <b>Attribute</b>. Sie beschreiben, wie stark, geschickt, klug usw. er ist.</p>
+          <div class="tabelle-wrap">
+          <table>
+            <tr><th>Attribut</th><th>Kürzel</th><th>Steht für</th></tr>
+            <tr><td>Stärke</td><td>STÄ</td><td>Kraft, Heben, Klettern, Nahkampf</td></tr>
+            <tr><td>Geschicklichkeit</td><td>GES</td><td>Reflexe, Schleichen, Fernkampf, Ausweichen</td></tr>
+            <tr><td>Konstitution</td><td>KON</td><td>Ausdauer, Trefferpunkte, Gift aushalten</td></tr>
+            <tr><td>Intelligenz</td><td>INT</td><td>Wissen, Logik, sich erinnern</td></tr>
+            <tr><td>Weisheit</td><td>WEI</td><td>Wahrnehmung, Bauchgefühl, Menschenkenntnis</td></tr>
+            <tr><td>Charisma</td><td>CHA</td><td>Ausstrahlung, Reden, Willenskraft</td></tr>
+          </table>
+          </div>
+          <p>Jedes Attribut hat einen <b>Wert</b> (meistens zwischen 8 und 16, ein normaler Mensch hat 10) und daraus einen <b>Modifikator</b>. Im Spiel benutzt du fast nur den Modifikator!</p>
+          <div class="tabelle-wrap">
+          <table class="mitte">
+            <tr><th>Wert</th><td>1</td><td>2–3</td><td>4–5</td><td>6–7</td><td>8–9</td><td>10–11</td><td>12–13</td><td>14–15</td><td>16–17</td><td>18–19</td><td>20</td></tr>
+            <tr><th>Mod.</th><td>−5</td><td>−4</td><td>−3</td><td>−2</td><td>−1</td><td>+0</td><td>+1</td><td>+2</td><td>+3</td><td>+4</td><td>+5</td></tr>
+          </table>
+          </div>
+          <p><b>Formel:</b> (Wert − 10) ÷ 2, abrunden. Beispiel: Stärke 16 → (16 − 10) ÷ 2 = <b>+3</b>. Stärke 9 → (9 − 10) ÷ 2 = −0,5 → abgerundet <b>−1</b>.</p>
+
+          <fieldset id="mod-trainer">
+            <legend>Übung: Modifikator-Trainer</legend>
+            <p class="aufgabe" style="font-size:18px;"></p>
+            <div class="antworten zeile"></div>
+            <p class="rueckmeldung" style="font-weight:bold;min-height:1.5em;"></p>
+            <div class="zeile"><button type="button" class="weiter-knopf">Nächste Aufgabe</button> <span class="punkte klein"></span></div>
+          </fieldset>
+        </section>
+
+        <!-- ===================== 4 ===================== -->
+        <section class="lektion" id="l-4" data-titel="Fertigkeiten">
+          <h2>4. Fertigkeiten &amp; Übungsbonus</h2>
+          <p>Es gibt 18 <b>Fertigkeiten</b>. Jede gehört zu einem Attribut. Wenn du z.&nbsp;B. klettern willst, ist das <i>Athletik</i>, und Athletik gehört zu Stärke.</p>
+          <div class="tabelle-wrap">
+          <table>
+            <tr><th>Attribut</th><th>Fertigkeiten</th></tr>
+            <tr><td>Stärke</td><td>Athletik</td></tr>
+            <tr><td>Geschicklichkeit</td><td>Akrobatik, Fingerfertigkeit, Heimlichkeit</td></tr>
+            <tr><td>Konstitution</td><td><i>keine</i> – dafür bestimmt sie deine Trefferpunkte</td></tr>
+            <tr><td>Intelligenz</td><td>Arkane Kunde, Geschichte, Nachforschungen, Naturkunde, Religion</td></tr>
+            <tr><td>Weisheit</td><td>Heilkunde, Mit Tieren umgehen, Motiv erkennen, Überlebenskunst, Wahrnehmung</td></tr>
+            <tr><td>Charisma</td><td>Auftreten, Einschüchtern, Täuschen, Überzeugen</td></tr>
+          </table>
+          </div>
+          <h3>Geübt oder nicht geübt?</h3>
+          <p>
+            Durch deine Klasse und deine Herkunft bist du in einigen Fertigkeiten <b>geübt</b>.
+            Dann darfst du deinen <b>Übungsbonus</b> dazurechnen. Der ist am Anfang <b>+2</b> und wächst mit der Stufe
+            (+3 ab Stufe 5, +4 ab Stufe 9, +5 ab Stufe 13, +6 ab Stufe 17).
+          </p>
+          <ul>
+            <li><b>Geübt:</b> Attribut-Modifikator + Übungsbonus</li>
+            <li><b>Nicht geübt:</b> nur der Attribut-Modifikator</li>
+          </ul>
+          <p><b>Beispiel:</b> Brena hat Stärke 16 (+3) und ist in Athletik geübt (+2). Ihr Athletik-Bonus ist also <b>+5</b>. In Heimlichkeit ist sie nicht geübt, da hat sie nur ihren GES-Modifikator <b>+1</b>.</p>
+          <div class="tipp"><b>Gut zu wissen:</b> Schurken und Barden können <b>Expertise</b> bekommen – dann zählt der Übungsbonus doppelt. Deshalb hat der Halbling Fips in Heimlichkeit +7 (GES +3, plus 2 × 2).</div>
+
+          <fieldset id="fert-trainer">
+            <legend>Übung: Welches Attribut gehört dazu?</legend>
+            <p class="aufgabe" style="font-size:18px;"></p>
+            <div class="antworten zeile"></div>
+            <p class="rueckmeldung" style="font-weight:bold;min-height:1.5em;"></p>
+            <div class="zeile"><button type="button" class="weiter-knopf">Nächste Fertigkeit</button> <span class="punkte klein"></span></div>
+          </fieldset>
+        </section>
+
+        <!-- ===================== 5 ===================== -->
+        <section class="lektion" id="l-5" data-titel="Die Probe">
+          <h2>5. Die Probe: W20 + Modifikator gegen SG</h2>
+          <p>Das ist die wichtigste Regel des ganzen Spiels. Wenn du etwas versuchst, das schiefgehen kann:</p>
+          <ol>
+            <li>Du beschreibst, was dein Charakter tut.</li>
+            <li>Der SL überlegt: Ist das unsicher? Wenn nicht, klappt es einfach (Tür öffnen) oder ist unmöglich (zum Mond springen).</li>
+            <li>Der SL sagt, welche Fertigkeit passt, und legt einen <b>Schwierigkeitsgrad (SG)</b> fest – meistens heimlich.</li>
+            <li>Du würfelst <b>W20 + deinen Bonus</b>.</li>
+            <li>Ist das Ergebnis <b>gleich oder höher</b> als der SG: geschafft!</li>
+          </ol>
+          <div class="tabelle-wrap">
+          <table>
+            <tr><th>SG</th><th>Wie schwer?</th><th>Beispiel</th></tr>
+            <tr><td>5</td><td>sehr leicht</td><td>über einen Zaun steigen</td></tr>
+            <tr><td>10</td><td>leicht</td><td>über einen Bach springen</td></tr>
+            <tr><td>15</td><td>mittel</td><td>nasse Mauer hochklettern</td></tr>
+            <tr><td>20</td><td>schwer</td><td>sich an einem Drachen vorbeischleichen</td></tr>
+            <tr><td>25</td><td>sehr schwer</td><td>über eine 6 m breite Schlucht springen</td></tr>
+            <tr><td>30</td><td>fast unmöglich</td><td>einen König überzeugen, dir sein Reich zu schenken</td></tr>
+          </table>
+          </div>
+
+          <fieldset id="proben-sim">
+            <legend>Übung: Proben-Simulator</legend>
+            <p>Such dir einen Helden und eine Situation aus. Der SL hat den Schwierigkeitsgrad schon heimlich festgelegt …</p>
+            <div class="zeile">
+              <label>Held: <select class="held"></select></label>
+              <label>Situation: <select class="situation"></select></label>
+            </div>
+            <div class="zeile">
+              <button type="button" class="dunkel wurf-knopf">Probe würfeln</button>
+            </div>
+            <div class="log ausgabe"><p class="info">Noch nicht gewürfelt.</p></div>
+          </fieldset>
+
+          <div class="frage" data-auto>
+            <p class="f">Du hast Heimlichkeit +4 und würfelst eine 9. Der SG ist 13. Was passiert?</p>
+            <div class="antworten">
+              <button type="button" data-ok>Geschafft – 13 reicht genau</button>
+              <button type="button">Knapp gescheitert</button>
+              <button type="button">Kommt drauf an, was der SL will</button>
+            </div>
+            <p class="erkl">9 + 4 = 13. Gleich dem SG reicht schon – „Gleichstand gewinnt“.</p>
+          </div>
+        </section>
+
+        <!-- ===================== 6 ===================== -->
+        <section class="lektion" id="l-6" data-titel="Vorteil &amp; Nachteil">
+          <h2>6. Vorteil &amp; Nachteil</h2>
+          <p>Manchmal sind die Umstände besonders gut oder schlecht. Dann rechnet man keine Zahlen dazu, sondern würfelt einfach zweimal:</p>
+          <ul>
+            <li><b>Vorteil:</b> Wirf zwei W20 und nimm den <b>höheren</b>.</li>
+            <li><b>Nachteil:</b> Wirf zwei W20 und nimm den <b>niedrigeren</b>.</li>
+          </ul>
+          <div class="zwei-spalten">
+            <div>
+              <h4>Vorteil bekommst du z.&nbsp;B., wenn …</h4>
+              <ul>
+                <li>dir ein Freund hilft (Aktion „Helfen“)</li>
+                <li>der Gegner dich nicht sehen kann</li>
+                <li>der Gegner am Boden liegt (im Nahkampf)</li>
+                <li>du einen richtig guten Plan hast</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Nachteil bekommst du z.&nbsp;B., wenn …</h4>
+              <ul>
+                <li>du im Dunkeln etwas suchst</li>
+                <li>du vergiftet oder verängstigt bist</li>
+                <li>du mit dem Bogen auf einen Gegner direkt neben dir schießt</li>
+                <li>du gefesselt bist</li>
+              </ul>
+            </div>
+          </div>
+          <div class="tipp"><b>Zwei Regeln:</b> Mehrmals Vorteil zählt nicht doppelt – es bleibt bei zwei Würfeln. Und hast du gleichzeitig Vorteil <u>und</u> Nachteil, heben sie sich auf: Du würfelst ganz normal.</div>
+
+          <fieldset id="vorteil-demo">
+            <legend>Übung: Probier's aus</legend>
+            <div class="zeile">
+              <button type="button" data-modus="">Normal</button>
+              <button type="button" data-modus="v">Mit Vorteil</button>
+              <button type="button" data-modus="n">Mit Nachteil</button>
+            </div>
+            <div class="wuerfel-anzeige zeile" style="min-height:70px;"></div>
+            <p class="ausgabe" style="font-weight:bold;"></p>
+            <hr>
+            <p>Wie viel bringt Vorteil eigentlich? Lass den Computer jeweils 1000-mal würfeln:</p>
+            <button type="button" class="statistik-knopf">1000× würfeln</button>
+            <div class="statistik"></div>
+          </fieldset>
+        </section>
+
+        <!-- ===================== 7 ===================== -->
+        <section class="lektion" id="l-7" data-titel="Rettungswürfe">
+          <h2>7. Rettungswürfe</h2>
+          <p>
+            Eine <b>Probe</b> machst du, wenn <i>du</i> etwas versuchst. Einen <b>Rettungswurf</b> machst du, wenn
+            <i>dir</i> etwas passiert und du dich dagegen wehrst: eine Falle schnappt zu, ein Gift wirkt, ein Zauber trifft dich.
+          </p>
+          <p>Der SL sagt dann z.&nbsp;B.: <i>„Mach einen Geschicklichkeits-Rettungswurf, SG 13.“</i> Du würfelst W20 + deinen GES-Modifikator. Jede Klasse ist in zwei Rettungswürfen geübt – dort kommt der Übungsbonus dazu.</p>
+          <div class="tabelle-wrap">
+          <table>
+            <tr><th>Rettungswurf</th><th>Typisch gegen …</th></tr>
+            <tr><td>Stärke</td><td>umgestoßen, weggedrückt oder festgehalten werden</td></tr>
+            <tr><td>Geschicklichkeit</td><td>Feuerball, Fallen, herabstürzende Steine – alles, dem man ausweichen kann</td></tr>
+            <tr><td>Konstitution</td><td>Gift, Krankheit, Kälte; Konzentration auf einen Zauber halten</td></tr>
+            <tr><td>Intelligenz</td><td>Illusionen, Angriffe auf den Verstand</td></tr>
+            <tr><td>Weisheit</td><td>Bezauberung, Angst, Gedankenkontrolle</td></tr>
+            <tr><td>Charisma</td><td>Besessenheit, Verbannung in eine andere Welt</td></tr>
+          </table>
+          </div>
+          <div class="frage" data-auto>
+            <p class="f">Ein riesiger Felsbrocken rollt durch den Gang auf dich zu. Was würfelst du?</p>
+            <div class="antworten">
+              <button type="button">Eine Athletik-Probe</button>
+              <button type="button" data-ok>Einen GES-Rettungswurf</button>
+              <button type="button">Einen KON-Rettungswurf</button>
+            </div>
+            <p class="erkl">Dir passiert etwas, und du willst ausweichen – also ein Geschicklichkeits-Rettungswurf. (Wenn du den Felsen aktiv aufhalten wolltest, wäre es eine Athletik-Probe – viel Glück!)</p>
+          </div>
+        </section>
+
+        <!-- ===================== 8 ===================== -->
+        <section class="lektion" id="l-8" data-titel="Kampf: Ablauf">
+          <h2>8. Kampf, Teil 1: Wer ist wann dran?</h2>
+          <h3>Initiative</h3>
+          <p>Wenn ein Kampf beginnt, würfeln alle <b>Initiative</b>: W20 + GES-Modifikator. Wer am höchsten würfelt, fängt an, dann geht es der Reihe nach. Wenn alle dran waren, ist eine <b>Runde</b> vorbei (das sind etwa 6 Sekunden in der Spielwelt), und es geht wieder von oben los.</p>
+          <h3>Was du in deinem Zug machen darfst</h3>
+          <div class="tabelle-wrap">
+          <table>
+            <tr><th>Was</th><th>Wie oft</th><th>Beispiele</th></tr>
+            <tr><td><b>Bewegung</b></td><td>bis zu deiner Bewegungsrate (meist 9 m = 6 Felder)</td><td>Du kannst sie aufteilen: 3 m hin, angreifen, 6 m weg.</td></tr>
+            <tr><td><b>Aktion</b></td><td>1×</td><td>angreifen, zaubern, rennen, helfen …</td></tr>
+            <tr><td><b>Bonusaktion</b></td><td>1×, aber nur wenn du etwas hast, das eine Bonusaktion ist</td><td>Zweiter Atem, Heilendes Wort, Heiltrank trinken</td></tr>
+            <tr><td><b>Reaktion</b></td><td>1× pro Runde, auch im Zug der anderen</td><td>Gelegenheitsangriff, Schild-Zauber</td></tr>
+            <tr><td>Kleinkram</td><td>nebenbei</td><td>Tür öffnen, Schwert ziehen, kurz etwas rufen</td></tr>
+          </table>
+          </div>
+          <h3>Die wichtigsten Aktionen</h3>
+          <div class="tabelle-wrap">
+          <table>
+            <tr><th>Aktion</th><th>Was sie macht</th></tr>
+            <tr><td>Angriff</td><td>Mit einer Waffe angreifen (siehe nächste Lektion)</td></tr>
+            <tr><td>Zaubern</td><td>Einen Zauber wirken oder einen magischen Gegenstand benutzen</td></tr>
+            <tr><td>Spurt</td><td>Noch einmal so weit laufen</td></tr>
+            <tr><td>Rückzug</td><td>Wegbewegen, ohne dass Gegner einen Gelegenheitsangriff bekommen</td></tr>
+            <tr><td>Ausweichen</td><td>Bis zu deinem nächsten Zug haben Angriffe gegen dich Nachteil</td></tr>
+            <tr><td>Helfen</td><td>Ein Verbündeter bekommt Vorteil auf seine nächste Probe oder seinen nächsten Angriff</td></tr>
+            <tr><td>Verstecken</td><td>Heimlichkeits-Probe, um unsichtbar für die Gegner zu werden</td></tr>
+            <tr><td>Suchen</td><td>Wahrnehmungs- oder Nachforschungs-Probe</td></tr>
+            <tr><td>Bereithalten</td><td>„Wenn der Ork durch die Tür kommt, schlage ich zu.“</td></tr>
+          </table>
+          </div>
+          <div class="achtung"><b>Gelegenheitsangriff:</b> Wenn du dich aus der Reichweite eines Gegners wegbewegst, darf er dich als Reaktion einmal angreifen. Deshalb gibt es die Aktion „Rückzug“.</div>
+          <div class="frage" data-auto>
+            <p class="f">Darfst du in einem Zug 3 m laufen, angreifen und dann noch 6 m weiterlaufen?</p>
+            <div class="antworten">
+              <button type="button" data-ok>Ja</button>
+              <button type="button">Nein, erst laufen, dann angreifen, dann Schluss</button>
+            </div>
+            <p class="erkl">Ja! Die Bewegung darf man aufteilen. Aber Achtung vor dem Gelegenheitsangriff, wenn du vom Gegner wegläufst.</p>
+          </div>
+        </section>
+
+        <!-- ===================== 9 ===================== -->
+        <section class="lektion" id="l-9" data-titel="Kampf: Angreifen">
+          <h2>9. Kampf, Teil 2: Angreifen &amp; Schaden</h2>
+          <h3>Der Angriffswurf</h3>
+          <p>
+            Angreifen funktioniert wie eine Probe, nur dass du gegen die <b>Rüstungsklasse (RK)</b> des Gegners würfelst:
+            <b>W20 + Angriffsbonus ≥ RK</b> → Treffer.
+          </p>
+          <ul>
+            <li>Der Angriffsbonus ist Attribut-Modifikator + Übungsbonus (steht fertig auf dem Charakterbogen).</li>
+            <li>Nahkampf benutzt meistens <b>Stärke</b>, Fernkampf <b>Geschicklichkeit</b>. Leichte Waffen wie Dolch oder Rapier (<i>Finesse</i>) dürfen auch mit GES geführt werden.</li>
+            <li>Zauber benutzen dein Zauberattribut (Magier INT, Kleriker WEI …).</li>
+          </ul>
+          <h3>Schaden</h3>
+          <p>Wenn du triffst, würfelst du den Schaden deiner Waffe plus denselben Modifikator. Langschwert mit STÄ +3: <span class="w">1W8+3</span>. Der Gegner verliert so viele <b>Trefferpunkte (TP)</b>.</p>
+          <div class="tipp">
+            <b>Natürliche 20 und 1:</b> Würfelst du beim Angriff eine echte 20 auf dem Würfel, triffst du immer, und es ist ein <b>kritischer Treffer</b>: Du würfelst die Schadenswürfel doppelt (den Modifikator nur einmal). Aus <span class="w">1W8+3</span> wird <span class="w">2W8+3</span>. Eine natürliche 1 verfehlt immer.
+          </div>
+          <p class="klein">Offiziell gilt das mit 20 und 1 nur für Angriffe. Viele Gruppen spielen es als Hausregel aber auch bei Proben.</p>
+
+          <fieldset id="mini-kampf">
+            <legend>Übung: Dein erster Kampf</legend>
+            <p>Ein Goblin springt aus dem Gebüsch! Wähle deinen Helden und kämpfe. Im Protokoll steht bei jedem Wurf, was gerade passiert.</p>
+            <div class="zeile">
+              <label>Held: <select class="held-wahl">
+                <option value="brena">Brena (Kämpferin) – leicht</option>
+                <option value="liora">Liora (Magierin) – schwerer</option>
+              </select></label>
+              <button type="button" class="dunkel start-knopf">Kampf starten</button>
+            </div>
+            <div class="kampf-felder versteckt">
+              <div class="kampf-box held-box"></div>
+              <div class="kampf-box gegner-box"></div>
+            </div>
+            <div class="zeile aktionen versteckt"></div>
+            <div class="log kampflog"><p class="info">Wähle einen Helden und drücke „Kampf starten“.</p></div>
+          </fieldset>
+        </section>
+
+        <!-- ===================== 10 ===================== -->
+        <section class="lektion" id="l-10" data-titel="0 TP &amp; Heilung">
+          <h2>10. Wenn's eng wird: 0 Trefferpunkte &amp; Heilung</h2>
+          <p>Fällt dein Charakter auf <b>0 TP</b>, ist er nicht tot, sondern <b>bewusstlos</b>. Ab jetzt machst du zu Beginn jedes deiner Züge einen <b>Todesrettungswurf</b>:</p>
+          <ul>
+            <li>W20 ohne Bonus. <b>10 oder mehr</b> = Erfolg, <b>9 oder weniger</b> = Misserfolg.</li>
+            <li><b>3 Erfolge</b> → du bist stabil (bleibt bewusstlos, stirbt aber nicht).</li>
+            <li><b>3 Misserfolge</b> → dein Charakter stirbt.</li>
+            <li><b>Natürliche 20</b> → du wachst sofort mit 1 TP auf! <b>Natürliche 1</b> → zählt als zwei Misserfolge.</li>
+            <li>Wirst du bei 0 TP getroffen, ist das ein Misserfolg (ein kritischer Treffer sogar zwei).</li>
+          </ul>
+          <div class="tipp"><b>Rettung:</b> Jede Heilung weckt dich sofort auf. Ohne Magie kann ein Freund dich mit einer Heilkunde-Probe (SG 10) stabilisieren.</div>
+
+          <fieldset id="todes-sim">
+            <legend>Übung: Überlebst du?</legend>
+            <p>Du liegst bewusstlos auf dem Boden. Würfle deine Todesrettungswürfe …</p>
+            <div class="zeile" style="font-family:'Courier New',monospace;font-size:18px;">
+              <span>Erfolge: <b class="erfolge">☐☐☐</b></span>
+              <span>Misserfolge: <b class="misserfolge rot">☐☐☐</b></span>
+            </div>
+            <div class="zeile">
+              <button type="button" class="dunkel wurf-knopf">Todesrettungswurf</button>
+              <button type="button" class="neu-knopf">Von vorne</button>
+            </div>
+            <div class="log ausgabe"><p class="info">Dein Zug beginnt …</p></div>
+          </fieldset>
+
+          <h3>Rasten</h3>
+          <div class="tabelle-wrap">
+          <table>
+            <tr><th>Rast</th><th>Dauer</th><th>Was passiert</th></tr>
+            <tr><td><b>Kurze Rast</b></td><td>1 Stunde</td><td>Du kannst <b>Trefferwürfel</b> ausgeben, um dich zu heilen (Würfel + KON-Mod pro Würfel). Manche Fähigkeiten laden sich auf.</td></tr>
+            <tr><td><b>Lange Rast</b></td><td>8 Stunden (höchstens einmal pro Tag)</td><td>Alle TP, alle Zauberplätze und alle Trefferwürfel kommen zurück.</td></tr>
+          </table>
+          </div>
+          <p>Ein normaler <b>Heiltrank</b> heilt <span class="w">2W4+2</span> TP. Ihn zu trinken ist eine Bonusaktion.</p>
+        </section>
+
+        <!-- ===================== 11 ===================== -->
+        <section class="lektion" id="l-11" data-titel="Zauber">
+          <h2>11. Zauber</h2>
+          <p>Magier, Kleriker, Druiden, Barden und Co. können zaubern. Die wichtigsten Begriffe:</p>
+          <ul>
+            <li><b>Zaubertricks</b> kosten nichts – du kannst sie so oft wirken, wie du willst. Beispiele: <i>Feuerpfeil</i>, <i>Heilige Flamme</i>, <i>Licht</i>.</li>
+            <li><b>Zauber</b> ab dem 1. Grad kosten einen <b>Zauberplatz</b>. Davon hast du nur wenige (auf Stufe 1 meistens 2). Nach einer langen Rast sind alle wieder da.</li>
+            <li><b>Zauberattribut:</b> Magier benutzen INT; Kleriker, Druiden und Waldläufer WEI; Barden, Hexenmeister, Paladine und Zauberer CHA.</li>
+          </ul>
+          <h3>Wie ein Zauber trifft</h3>
+          <p>Es gibt zwei Arten:</p>
+          <ol>
+            <li><b>Zauberangriff:</b> wie ein Waffenangriff – W20 + Zauberangriffsbonus gegen die RK. Beispiel: Lioras <i>Feuerpfeil</i>, +5 auf Treffer, <span class="w">1W10</span> Feuerschaden.</li>
+            <li><b>Rettungswurf des Ziels:</b> Das Ziel muss gegen deinen <b>Zauber-SG</b> würfeln (8 + Übungsbonus + Zaubermodifikator). Beispiel: Aldrics <i>Heilige Flamme</i> – der Goblin muss einen GES-Rettungswurf gegen SG 13 schaffen, sonst nimmt er <span class="w">1W8</span> Schaden.</li>
+          </ol>
+          <p>Und manche Zauber treffen einfach immer: <i>Magisches Geschoss</i> schießt drei Pfeile mit je <span class="w">1W4+1</span> Schaden.</p>
+          <div class="achtung"><b>Konzentration:</b> Manche Zauber halten an, solange du dich konzentrierst (z.&nbsp;B. <i>Segen</i>). Du kannst dich immer nur auf einen Zauber gleichzeitig konzentrieren. Wirst du getroffen, machst du einen KON-Rettungswurf (SG 10 oder halber Schaden, je nachdem, was höher ist) – sonst endet der Zauber.</div>
+          <div class="frage" data-auto>
+            <p class="f">Liora hat beide Zauberplätze verbraucht. Kann sie trotzdem noch <i>Feuerpfeil</i> wirken?</p>
+            <div class="antworten">
+              <button type="button" data-ok>Ja</button>
+              <button type="button">Nein, erst nach einer langen Rast</button>
+            </div>
+            <p class="erkl">Ja – Feuerpfeil ist ein Zaubertrick und kostet keinen Zauberplatz.</p>
+          </div>
+        </section>
+
+        <!-- ===================== 12 ===================== -->
+        <section class="lektion" id="l-12" data-titel="Gut spielen">
+          <h2>12. So spielt ihr richtig gut</h2>
+          <p>Die Regeln sind nur das Werkzeug. Was einen Abend wirklich gut macht:</p>
+          <h3>Für Spieler</h3>
+          <ul>
+            <li><b>Beschreibe, was du tust – nicht welche Regel du willst.</b> Statt „Ich mache einen Athletikwurf“ lieber: „Ich nehme Anlauf, springe auf den Tisch und schwinge mich am Kronleuchter rüber!“ Welcher Wurf nötig ist, sagt der SL.</li>
+            <li><b>Kenne deinen Charakter.</b> Was will er? Wovor hat er Angst? Welches Geheimnis hat er? Das bringt mehr als jede Regel.</li>
+            <li><b>Spielt miteinander.</b> Lasst jedem mal das Rampenlicht – auch den Leisen. Fragt: „Was macht eigentlich dein Charakter gerade?“</li>
+            <li><b>„Ja, und …“</b> statt „Nein“: Greift die Ideen der anderen auf und baut darauf auf.</li>
+            <li><b>Scheitern ist gut!</b> Ein verpatzter Wurf sorgt oft für die besten Geschichten.</li>
+            <li><b>Überlege dir deinen Zug schon, bevor du dran bist.</b> Dann wird der Kampf nicht zäh.</li>
+            <li><b>Mach Notizen.</b> Namen von Figuren und Orten vergisst man sonst sofort.</li>
+          </ul>
+          <h3>Für den Spielleiter</h3>
+          <ul>
+            <li>Plane <b>Situationen, nicht Handlungen</b>. Die Spieler machen sowieso etwas anderes als gedacht – und das ist gut so.</li>
+            <li>Weißt du eine Regel nicht? <b>Entscheide spontan</b> und schlag sie nach dem Abend nach. Spielfluss ist wichtiger.</li>
+            <li>Frag die Spieler: <i>„Wie sieht das aus?“</i> oder <i>„Wie machst du das?“</i> – dann erzählen sie mit.</li>
+            <li>Halte eine Liste mit <a href="spielleiter.html#generatoren">Namen</a> bereit, für Figuren, die du nicht geplant hast.</li>
+            <li>Mische die drei Säulen von D&amp;D: <b>Kampf, Erkundung und Gespräche</b>.</li>
+          </ul>
+          <h3>Session Zero – der Abend vor dem ersten Abend</h3>
+          <p>Setzt euch vor dem ersten richtigen Spiel kurz zusammen und klärt:</p>
+          <ul>
+            <li>Welchen <b>Ton</b> wollen wir: eher ernst, eher lustig, gruselig?</li>
+            <li>Welche Themen sollen im Spiel <b>nicht</b> vorkommen? (Jeder darf etwas sagen, ohne es zu begründen.)</li>
+            <li>Wie oft und wann spielen wir?</li>
+            <li>Warum kennen sich unsere Charaktere? Passen sie zusammen?</li>
+            <li>Was machen wir, wenn ein Charakter stirbt?</li>
+          </ul>
+        </section>
+
+        <!-- ===================== 13 ===================== -->
+        <section class="lektion" id="l-13" data-titel="Dein erster Abend">
+          <h2>13. Geschafft – dein erster Abend</h2>
+          <p>Du kennst jetzt alle Grundregeln. Mehr braucht ihr für den Anfang nicht! So geht's weiter:</p>
+          <ol>
+            <li><b>Charaktere:</b> Baut euch im <a href="charakter.html">Charakterbogen</a> eigene Helden – oder nehmt die vier fertigen (Brena, Fips, Aldric, Liora).</li>
+            <li><b>Spielleiter:</b> Der SL liest vorher das Abenteuer <a href="abenteuer.html">„Lichter am Steinbruch“</a> einmal durch.</li>
+            <li><b>Am Tisch:</b> Der SL öffnet die <a href="spielleiter.html">Spielleiter-Werkzeuge</a> für die Initiative-Liste und die Monster.</li>
+            <li><b>Würfel:</b> Echte Würfel machen mehr Spaß – aber zur Not reicht der Würfeln-Knopf unten rechts.</li>
+          </ol>
+          <fieldset>
+            <legend>Spickzettel</legend>
+            <ul>
+              <li><b>Probe:</b> W20 + Bonus ≥ SG</li>
+              <li><b>Angriff:</b> W20 + Angriffsbonus ≥ RK, dann Schaden würfeln</li>
+              <li><b>Rettungswurf:</b> W20 + Attribut-Mod (+ Übung) ≥ SG</li>
+              <li><b>Vorteil/Nachteil:</b> 2 × W20, höheren/niedrigeren nehmen</li>
+              <li><b>Dein Zug:</b> Bewegung + 1 Aktion (+ evtl. 1 Bonusaktion), 1 Reaktion pro Runde</li>
+              <li><b>Natürliche 20 beim Angriff:</b> kritischer Treffer, Schadenswürfel doppelt</li>
+              <li><b>0 TP:</b> bewusstlos, Todesrettungswürfe (10+ ist ein Erfolg)</li>
+            </ul>
+          </fieldset>
+          <p class="mitte" style="font-size:18px;"><b>Viel Spaß – und mögen die Würfel mit euch sein!</b></p>
+          <p class="mitte"><button type="button" id="fortschritt-reset" class="klein-k">Fortschritt zurücksetzen</button></p>
+        </section>
+
+      </div>
+    </div>
+  </main>
+  <footer class="fuss">
+    Selbstgebaut für unsere Runde. Regeln vereinfacht nach der 5. Edition von Dungeons &amp; Dragons (Stand 2024) –
+    für die vollständigen Regeln schaut in die kostenlosen Grundregeln auf <a href="https://www.dndbeyond.com/">D&amp;D Beyond</a>.
+    Dungeons &amp; Dragons ist eine Marke von Wizards of the Coast; das hier ist eine private Fanseite.
+  </footer>
+</div>
+<script src="js/gemeinsam.js"></script>
+<script src="js/daten.js"></script>
+<script src="js/anleitung.js"></script>
+</body>
+</html>

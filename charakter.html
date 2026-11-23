@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Charakterbogen – Die Würfelrunde</title>
+<meta name="description" content="D&amp;D-Charakter bauen: Klasse, Volk, Attribute und Fertigkeiten werden automatisch berechnet. Speichern, drucken, würfeln.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpolygon points='20,2 36,11 36,29 20,38 4,29 4,11' fill='%238a1c1c' stroke='%23000' stroke-width='2'/%3E%3Ctext x='20' y='25' text-anchor='middle' font-family='Georgia' font-size='13' font-weight='bold' fill='%23fff'%3E20%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/stil.css">
+</head>
+<body>
+<div class="seite">
+  <header class="kopf">
+    <a href="index.html" title="Zur Startseite"><svg width="50" height="50" viewBox="0 0 40 40" aria-hidden="true">
+      <polygon points="20,2 36,11 36,29 20,38 4,29 4,11" fill="#5e1010" stroke="#fff" stroke-width="2"/>
+      <g fill="none" stroke="#fff" stroke-width="1">
+        <polygon points="20,9 30,26 10,26"/>
+        <line x1="20" y1="2" x2="20" y2="9"/><line x1="36" y1="11" x2="20" y2="9"/><line x1="4" y1="11" x2="20" y2="9"/>
+        <line x1="36" y1="11" x2="30" y2="26"/><line x1="36" y1="29" x2="30" y2="26"/><line x1="20" y1="38" x2="30" y2="26"/>
+        <line x1="20" y1="38" x2="10" y2="26"/><line x1="4" y1="29" x2="10" y2="26"/><line x1="4" y1="11" x2="10" y2="26"/>
+      </g>
+      <text x="20" y="22.5" text-anchor="middle" font-family="Georgia,serif" font-size="8" font-weight="bold" fill="#fff">20</text>
+    </svg></a>
+    <div>
+      <a href="index.html" class="titel">Die Würfelrunde</a>
+      <div class="untertitel">D&amp;D lernen, würfeln, losspielen</div>
+    </div>
+  </header>
+  <nav class="menue">
+    <a href="index.html">Start</a>
+    <a href="anleitung.html">Anleitung</a>
+    <a href="wuerfel.html">Würfel</a>
+    <a href="charakter.html" class="aktiv">Charakterbogen</a>
+    <a href="spielleiter.html">Spielleiter</a>
+    <a href="abenteuer.html">Abenteuer</a>
+    <a href="glossar.html">Glossar</a>
+  </nav>
+  <main>
+    <h1 class="nicht-drucken">Charakterbogen</h1>
+    <p class="nicht-drucken">
+      Bau dir hier deinen Helden. Alles, was man ausrechnen kann, rechnet die Seite für dich aus.
+      <b>Tipp:</b> Klick auf einen Bonus (die Zahlen in den Kästchen), um direkt damit zu würfeln.
+      Der Bogen wird automatisch in deinem Browser gespeichert.
+    </p>
+
+    <fieldset class="nicht-drucken">
+      <legend>Vorlagen &amp; Speicher</legend>
+      <div class="zeile">
+        <b>Fertige Helden:</b>
+        <span class="vorlagen" id="vorlagen"></span>
+      </div>
+      <div class="zeile">
+        <button type="button" id="neu">Neuer leerer Charakter</button>
+        <button type="button" id="speichern" class="dunkel">Unter dem Namen speichern</button>
+        <select id="gespeicherte"><option value="">– gespeicherte Charaktere –</option></select>
+        <button type="button" id="laden">Laden</button>
+        <button type="button" id="loeschen">Löschen</button>
+      </div>
+      <div class="zeile">
+        <button type="button" id="drucken">Drucken / als PDF</button>
+        <button type="button" id="export">Datei herunterladen</button>
+        <label class="knopf" for="import">Datei öffnen</label>
+        <input type="file" id="import" accept=".json,application/json" class="versteckt">
+        <span id="meldung" class="klein"></span>
+      </div>
+    </fieldset>
+
+    <div class="wurfzeile" id="wurfzeile">
+      <span id="wurf-text">Klick auf einen Bonus zum Würfeln.</span>
+      <span class="nicht-drucken wmodus">
+        <label><input type="radio" name="wmodus" value="" checked> normal</label>
+        <label><input type="radio" name="wmodus" value="v"> Vorteil</label>
+        <label><input type="radio" name="wmodus" value="n"> Nachteil</label>
+      </span>
+    </div>
+
+    <fieldset>
+      <legend>Wer bist du?</legend>
+      <div class="bogen-kopf">
+        <div class="feld"><label for="c-name">Name</label><input type="text" id="c-name" placeholder="z. B. Brena"></div>
+        <div class="feld"><label for="c-spieler">Gespielt von</label><input type="text" id="c-spieler"></div>
+        <div class="feld"><label for="c-klasse">Klasse</label><select id="c-klasse"></select></div>
+        <div class="feld"><label for="c-volk">Volk</label><select id="c-volk"></select></div>
+        <div class="feld"><label for="c-hintergrund">Hintergrund</label><select id="c-hintergrund"></select></div>
+        <div class="feld"><label for="c-stufe">Stufe</label><input type="number" id="c-stufe" min="1" max="20" value="1"></div>
+      </div>
+      <div class="klassen-info nicht-drucken" id="klassen-info"></div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Attribute</legend>
+      <div class="zeile nicht-drucken">
+        <button type="button" id="standardreihe">Standardreihe einsetzen (15, 14, 13, 12, 10, 8)</button>
+        <button type="button" id="auswuerfeln">Auswürfeln (4W6, niedrigsten streichen)</button>
+      </div>
+      <p class="klein nicht-drucken" id="attr-hinweis">Beide Knöpfe verteilen die Werte so, wie es zu deiner Klasse passt. Du kannst danach alles von Hand ändern.</p>
+      <div class="attribute" id="attribute"></div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Kampfwerte</legend>
+      <div class="werte">
+        <div class="wert"><div class="name">Rüstungsklasse</div><input type="number" id="c-rk" min="1" max="30" value="10"></div>
+        <div class="wert"><div class="name">Initiative</div><button type="button" class="bonus zahl" id="w-ini" style="border:0;background:none;font-size:24px;">+0</button></div>
+        <div class="wert"><div class="name">Bewegung (m)</div><input type="number" id="c-bew" min="0" max="30" step="1.5" value="9"></div>
+        <div class="wert"><div class="name">TP maximal</div><input type="number" id="c-tpmax" min="1" max="400" value="10"></div>
+        <div class="wert"><div class="name">TP aktuell</div><input type="number" id="c-tpakt" min="-50" max="400" value="10"></div>
+        <div class="wert"><div class="name">Übungsbonus</div><div class="zahl" id="w-ueb">+2</div></div>
+        <div class="wert"><div class="name">Passive Wahrn.</div><div class="zahl" id="w-pw">10</div></div>
+        <div class="wert"><div class="name">Trefferwürfel</div><div class="zahl" id="w-tw" style="font-size:20px;">1W8</div></div>
+      </div>
+      <p class="klein nicht-drucken" id="tp-vorschlag"></p>
+      <p class="klein nicht-drucken" id="rk-hinweis"></p>
+    </fieldset>
+
+    <div class="zwei-spalten">
+      <div>
+        <fieldset>
+          <legend>Rettungswürfe</legend>
+          <ul class="fert-liste" id="rettungswuerfe"></ul>
+        </fieldset>
+        <fieldset>
+          <legend>Fertigkeiten</legend>
+          <p class="klein nicht-drucken">Kästchen anklicken: <b>✓</b> = geübt, <b>✓✓</b> = Expertise (doppelter Übungsbonus). <span style="text-decoration:underline dotted #8a1c1c;">Unterstrichen</span> = darfst du über deine Klasse wählen.</p>
+          <ul class="fert-liste" id="fertigkeiten"></ul>
+          <p class="klein nicht-drucken" id="fert-zaehler"></p>
+        </fieldset>
+      </div>
+      <div>
+        <fieldset>
+          <legend>Angriffe &amp; Zauber</legend>
+          <textarea id="c-angriffe" rows="5" placeholder="Langschwert: +5, 1W8+3 Hieb"></textarea>
+        </fieldset>
+        <fieldset>
+          <legend>Fähigkeiten &amp; Merkmale</legend>
+          <textarea id="c-faehigkeiten" rows="6"></textarea>
+        </fieldset>
+        <fieldset>
+          <legend>Ausrüstung</legend>
+          <textarea id="c-ausruestung" rows="4"></textarea>
+        </fieldset>
+        <fieldset>
+          <legend>Persönlichkeit &amp; Notizen</legend>
+          <textarea id="c-notizen" rows="5" placeholder="Was will dein Charakter? Wovor hat er Angst? Welches Geheimnis hat er?"></textarea>
+        </fieldset>
+      </div>
+    </div>
+  </main>
+  <footer class="fuss">
+    Selbstgebaut für unsere Runde. Regeln vereinfacht nach der 5. Edition von Dungeons &amp; Dragons (Stand 2024) –
+    für die vollständigen Regeln schaut in die kostenlosen Grundregeln auf <a href="https://www.dndbeyond.com/">D&amp;D Beyond</a>.
+    Dungeons &amp; Dragons ist eine Marke von Wizards of the Coast; das hier ist eine private Fanseite.
+  </footer>
+</div>
+<script src="js/gemeinsam.js"></script>
+<script src="js/daten.js"></script>
+<script src="js/charakter.js"></script>
+</body>
+</html>
