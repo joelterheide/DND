@@ -155,7 +155,7 @@ hr {
 }
 .sl-info::before {
   content: "Nur für den Spielleiter";
-  display: inline-block;
+  display: table;
   background: #3a332c;
   color: #fff;
   font-size: 11px;
@@ -589,6 +589,84 @@ dl.glossar dd { margin: 2px 0 0 0; padding-left: 12px; border-left: 3px solid #d
 }
 #schnellwuerfel .sw-erg b { font-size: 26px; display: block; line-height: 1.1; }
 
+/* ---------- Spielen (Spiel-Engine) ---------- */
+.spieler-zeile { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; padding: 5px 0; border-bottom: 1px dotted #bbb; }
+.spieler-zeile .nr { font-weight: bold; width: 22px; }
+.spieler-zeile input { width: 150px; }
+
+.spiel-kopf {
+  background: #000;
+  color: #ffde85;
+  font-family: "Courier New", monospace;
+  font-size: 15px;
+  padding: 6px 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+}
+.amzug {
+  border: 2px solid #000;
+  border-top: 0;
+  background: #ffe9a8;
+  padding: 6px 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.amzug b { color: #8a1c1c; }
+
+.helden-leiste { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px; margin-bottom: 12px; }
+.held-karte { border: 2px solid #000; background: #fff; padding: 6px 8px; font-size: 13px; }
+.held-karte h4 { margin: 0; font-size: 16px; }
+.held-karte .wer { color: #5a5247; font-size: 12px; }
+.held-karte.dran { outline: 3px solid #8a1c1c; outline-offset: -1px; background: #fff7dc; }
+.held-karte.unten { background: #eee; }
+.held-karte.tot { background: #ccc; color: #555; text-decoration: line-through; }
+.held-karte .balken, .gegner-karte .balken { display: block; width: 100%; max-width: none; margin: 4px 0 2px; }
+.held-karte .status { color: #8a1c1c; font-weight: bold; }
+
+.reihenfolge { font-size: 13px; margin: 4px 0 8px; line-height: 1.9; }
+.reihenfolge span { border: 1px solid #000; padding: 1px 5px; background: #fff; white-space: nowrap; }
+.reihenfolge span.jetzt { background: #8a1c1c; color: #fff; }
+.reihenfolge span.raus { text-decoration: line-through; color: #888; }
+.gegner-leiste { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px; margin-bottom: 12px; }
+.gegner-karte { border: 2px solid #8a1c1c; background: #fff; padding: 6px 8px; font-size: 13px; }
+.gegner-karte h4 { margin: 0; font-size: 15px; color: #8a1c1c; }
+.gegner-karte.raus { opacity: .5; }
+
+.ergebnis { border: 2px solid #000; background: #fff; padding: 8px 12px; margin: 10px 0; }
+.ergebnis::before {
+  content: "Was passiert";
+  display: table;
+  background: #000;
+  color: #fff;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 1px 6px;
+  margin-bottom: 4px;
+}
+
+.kampf-zeile { font-family: "Courier New", monospace; font-size: 14px; padding: 1px 0; border-bottom: 1px dotted #ccc; }
+.kampf-zeile.gut { color: #0b6b1f; font-weight: bold; }
+.kampf-zeile.schlecht { color: #8a1c1c; font-weight: bold; }
+.kampf-zeile.info { color: #6b4a00; }
+.optionen { display: flex; flex-direction: column; gap: 6px; margin: 10px 0; }
+.optionen button { text-align: left; font-size: 15px; padding: 8px 12px; }
+.optionen button .probe-info { font-weight: normal; font-size: 12px; color: #5a3a10; }
+.optionen button.dunkel .probe-info { color: #f3d9a4; }
+.aktionsgruppe { margin: 8px 0; }
+.aktionsgruppe .titel { font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; color: #5a5247; margin-bottom: 3px; }
+.aktionsgruppe .knoepfe { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.wurf-frage { border: 3px solid #8a1c1c; background: #fff7dc; padding: 10px 12px; margin: 10px 0; }
+.wurf-frage input { width: 80px; font-size: 22px; font-weight: bold; text-align: center; }
+.wurf-frage .zeile { margin-top: 8px; }
+
+.endtabelle td, .endtabelle th { text-align: center; }
+.endtabelle td:first-child, .endtabelle th:first-child { text-align: left; }
+
 /* ---------- Fuß ---------- */
 .fuss {
   border-top: 2px solid #000;
@@ -625,6 +703,8 @@ dl.glossar dd { margin: 2px 0 0 0; padding-left: 12px; border-left: 3px solid #d
   .inhalt-liste.offen h4::after { content: " [ausblenden]"; }
   .attribute { grid-template-columns: repeat(3, 1fr); }
   .zwei-spalten, .kampf-felder { grid-template-columns: 1fr; }
+  .helden-leiste, .gegner-leiste { grid-template-columns: 1fr 1fr; }
+  .held-karte, .gegner-karte { font-size: 12px; padding: 5px 6px; }
   .werte { grid-template-columns: repeat(2, 1fr); }
   .grossergebnis { font-size: 52px; }
   .wuerfelknopf { width: calc(25% - 6px); }

@@ -8,6 +8,7 @@ Reines HTML, CSS und JavaScript – keine Frameworks, keine Installation, funkti
 | Seite | Was sie kann |
 |---|---|
 | `index.html` | Startseite mit den verschiedenen Einstiegen |
+| `spiel.html` | **Spiel starten:** Die Seite ist der Spielleiter. Helden wählen, dann reihum durch „Lichter am Steinbruch“ – mit Proben, Gruppenproben, Kämpfen nach Initiative, Klassenfähigkeiten, Todesrettungswürfen, mehreren Enden und Auswertung. Wahlweise würfelt die Seite oder ihr mit echten Würfeln. |
 | `anleitung.html` | 13 Lektionen mit Übungen: Modifikator-Trainer, Proben-Simulator, Vorteil/Nachteil, Probekampf gegen einen Goblin, Todesrettungswürfe |
 | `wuerfel.html` | Alle Würfel, Formeln wie `2W6+3`, W20 mit Vorteil/Nachteil und SG, Verlauf |
 | `charakter.html` | Charakterbogen mit automatischer Berechnung, 4 fertigen Helden, Speichern, Drucken/PDF, Datei-Export |
@@ -32,10 +33,11 @@ index.html, anleitung.html, …   die Seiten
 css/stil.css                     das komplette Design
 js/gemeinsam.js                  Würfel-Engine, Speichern, Schnellwürfel (auf allen Seiten)
 js/daten.js                      Klassen, Völker, Hintergründe, Fertigkeiten, Vorlage-Helden, Monster, Zustände
+js/spiel.js                      Spiel-Engine: Szenen, Proben, Kampf, Gegner
 js/anleitung.js, wuerfel.js, …   Logik der einzelnen Seiten
 ```
 
-Gespeichert wird nur im Browser (localStorage) – Charaktere, Initiative-Liste, Lernfortschritt, Würfelverlauf.
+Gespeichert wird nur im Browser (localStorage) – Charaktere, Spielstand, Initiative-Liste, Lernfortschritt, Würfelverlauf.
 
 ## Hinweis
 
